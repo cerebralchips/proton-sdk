@@ -1,0 +1,9 @@
+{
+  "scope": "First BOS decoder step, same W8A8 arithmetic and IREE graph, instrumented builds",
+  "matrix_invoke_cycles": 2327901,
+  "scalar_invoke_cycles": 6713729,
+  "scalar_divided_by_matrix": 2.8840268550939236,
+  "target_logits_bitwise_identical": true,
+  "excludes": "runtime setup, input/output copies, numerical checks and UART evidence output",
+  "limitations": "Functional RTL cycles only. No silicon frequency, wall-time throughput, or general model speedup claim."
+}

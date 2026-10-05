@@ -1,0 +1,32 @@
+{
+  "run": "runs/20261004T221021-model_matrix",
+  "heap_peak": 185728,
+  "state_bytes": 86640,
+  "reserved_stack_bytes": 262144,
+  "elf_segments": [
+    {
+      "address": "0x80000000",
+      "file_bytes": 221424,
+      "memory_bytes": 221424,
+      "flags": 5
+    },
+    {
+      "address": "0x800360f0",
+      "file_bytes": 489552,
+      "memory_bytes": 489552,
+      "flags": 4
+    },
+    {
+      "address": "0x800ad940",
+      "file_bytes": 30376,
+      "memory_bytes": 30376,
+      "flags": 6
+    },
+    {
+      "address": "0x800b5000",
+      "file_bytes": 0,
+      "memory_bytes": 88704,
+      "flags": 6
+    }
+  ]
+}

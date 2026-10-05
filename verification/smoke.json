@@ -1,0 +1,29 @@
+{
+  "run": "runs/20261004T213547-smoke",
+  "evidence": {
+    "result": "PASS",
+    "rtl_cycles": 378527,
+    "instructions": {
+      "retired": 190995,
+      "mzero": 0,
+      "mmacc": 0,
+      "vector": 0
+    },
+    "matrix_counts": [
+      0,
+      0
+    ],
+    "matched_commands": 0,
+    "sha256": {
+      "program.elf": "bcf45864086428a2981df93a4585371864c38821fed707ec5ca521af958f8f04",
+      "program.dump": "4e2127eca23c28f9e101f1b3807d05fca995772cc6ff24e3dfa6d440598bcc3a",
+      "rtl.log": "ea4d9b6d4bd5a218d6d20f5f3cb6eee57e772a3c12991516759825aafb1c1301",
+      "matrix-events.csv": "702526df50e815479865ffd732977b6a7a2969e836105ad83862be4b0516990b"
+    }
+  },
+  "simulator_sha256": "a0bcdeeb070faa7c2358e6ff7dac5b02e2a559a6a2803304ce98617724167c5f",
+  "trace_sha256": {
+    "trace_hart_0.dasm": "c42e897c51960d8c7db003b1bdc7edfa154c295fd7b363ee9ecc1c582eb31f70",
+    "retired-matrix.csv": "38f5816807d25b3fc197c72359331f2c45e17773d6512b523034a834cd32fd54"
+  }
+}

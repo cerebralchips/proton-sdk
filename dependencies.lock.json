@@ -1,0 +1,16 @@
+{
+  "iree": {"package": "iree-base-compiler", "version": "3.11.0", "revision": "e4a3b0405d7d23554da26403658d0e8c3c5ecf25"},
+  "numpy": "2.4.3",
+  "model": {"repository": "karpathy/tinyllamas", "revision": "0bd21da7698eaf29a0d7de3992de8a46ef624add", "directory": "stories260K", "license_metadata": "mit"},
+  "llama2_c": {"revision": "350e04fe35433e6d2941dce5a1f53308f87058eb"},
+  "archives": {
+    "iree": {"url": "https://github.com/iree-org/iree/archive/e4a3b0405d7d23554da26403658d0e8c3c5ecf25.tar.gz", "sha256": "7642da781775834347368ad5522a94ae889fba69a59510c276dbf09dc77d374d"},
+    "flatcc": {"url": "https://github.com/dvidelabs/flatcc/archive/9362cd00f0007d8cbee7bff86e90fb4b6b227ff3.tar.gz", "sha256": "f77f842e996f5bbfa25305a7b38b40d1325fb44154f2bf9880c58356ece92c62"},
+    "printf": {"url": "https://github.com/eyalroz/printf/archive/f1b728cbd5c6e10dc1f140f1574edfd1ccdcbedb.tar.gz", "sha256": "66da4b07c99c9c07c5adc220b96e356fab384c6e4c24220b35116eb19fbd8904"}
+  },
+  "model_files": {
+    "stories260K.bin": "b0a507e7ad0f626624f17112325e66691f9076d622e1d3274d103d00299f2696",
+    "tok512.bin": "037cb335abb25d1fa9e8ecae30ed2a3a8ace9302862ebcdc05d51a6bbb10c312",
+    "readme.md": "b743d79e10d9fdd57686aaef8fbb8ac337672dc0e098f9aebe672e4faea06ba4"
+  }
+}

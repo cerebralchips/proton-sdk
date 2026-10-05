@@ -1,0 +1,103 @@
+{
+  "target": {
+    "schema_version": 1,
+    "target": "proton-v1-cva6-ara2-matrix",
+    "hardware_revision": "a6e2dcd5bf95fff4879bf1e61a94cdc26bf59fd2",
+    "triple": "riscv64-unknown-elf",
+    "march": "rv64gcv_zfh_zvfh",
+    "abi": "lp64d",
+    "harts": 1,
+    "ram_base": "0x80000000",
+    "ram_bytes": 16777216,
+    "stack_bytes": 262144,
+    "vector": {
+      "lanes": 2,
+      "vlen_bits": 2048,
+      "elen_bits": 64
+    },
+    "matrix": {
+      "abi_version": 1,
+      "base": "0xe0000000",
+      "ident": "0x000104104d415431",
+      "tile_m": 4,
+      "tile_n": 4,
+      "tile_k": 16,
+      "input_type": "signed_int8",
+      "accumulator_type": "int32_modulo_2^32",
+      "opcode": "0x2b",
+      "zero_funct7": 0,
+      "macc_funct7": 1,
+      "transfer": "cpu_mmio",
+      "completion": "blocking_instruction"
+    }
+  },
+  "hardware_revision": "a6e2dcd5bf95fff4879bf1e61a94cdc26bf59fd2",
+  "segments": [
+    {
+      "address": "0x80000000",
+      "file_bytes": 221424,
+      "memory_bytes": 221424,
+      "flags": 5
+    },
+    {
+      "address": "0x800360f0",
+      "file_bytes": 489552,
+      "memory_bytes": 489552,
+      "flags": 4
+    },
+    {
+      "address": "0x800ad940",
+      "file_bytes": 30376,
+      "memory_bytes": 30376,
+      "flags": 6
+    },
+    {
+      "address": "0x800b5000",
+      "file_bytes": 0,
+      "memory_bytes": 88704,
+      "flags": 6
+    }
+  ],
+  "elf_sha256": "ffa7134163c293ebfbbc6c0942f042935cb4ce2a0d1bc5b3c28a8dcf4419ce9e",
+  "hardware_sha256": {
+    "hardware/matrix/matrix_axi_lite.sv": "8fdce704e968df66b2687d4a339ae75c7a9cd74f2cd787a73893aa4822f7b871",
+    "hardware/matrix/matrix_router.sv": "c64ed5e6078ecb09e750f7881fbcac99c55523c3217df88ca435f035b12be133",
+    "hardware/matrix/matrix_tile.sv": "1d12a380d180782a0b57244e96f7712f87717c668a83f680b28c9b250d01cb70",
+    "hardware/matrix/quadrilatero_pkg.sv": "91f854c1c654a4307e09fc6efe6ef478c8f892ad605898fae36d51f8f1c9048e",
+    "hardware/matrix/vendor/quadrilatero/quadrilatero_mac_int.sv": "bc2d562ddba741f14bf2c0d6044093eea77e7fc637d9f291b87309bc644bae54",
+    "hardware/matrix/vendor/quadrilatero/quadrilatero_mesh.sv": "dfb0d3d7b302360bad8a320a4b6fd561e6eb3ce036724cb5ba1c30143bbf6d69",
+    "hardware/matrix/vendor/quadrilatero/quadrilatero_pe.sv": "44db573fc3ad83d4b34c1fdddfcbc4ce2119c4d134c4af5041d8ff579fa25d30",
+    "patches/ara/0001-remove-invalid-waiver-characters.patch": "3df3618caab9adc59f8da4799784bd88e552d4042b15d9c0438e8a40f02c4aa3",
+    "patches/ara/0002-spike-linker-sections.patch": "70211a0248c2bc0aa9c6c77e50887aafe828b96bfa33129b1c83b2d1338b1bf1",
+    "patches/ara/0003-decimal-cycle-statistics.patch": "11c8ae9e512f7183b33b00fb285c8bd08a02ed47ac32258146f2c504fba9bb09",
+    "patches/ara/0004-track-testbench-build-inputs.patch": "17442599ba6a4a00d544354774f63f93ff32b0508ad616371a5e0dc46c03e2aa",
+    "patches/ara/0005-matrix-integration.patch": "e6570acc91f3520c5beb631d8040c484be18ef02b9e450bfffc6ba3db69eca54",
+    "patches/cva6/0001-matrix-serialization.patch": "63e44196b35bf85790fdb022b20407bad191709741d8ef5c17aab1eb0944e5be"
+  },
+  "sdk_sha256": {
+    "cmake/proton.cmake": "1b4b2a93ff47fe9f3816956c2a812f99bba6dfb340e93022ec52e676d2502104",
+    "compiler/model_graph.py": "4d6b83c96679617f20b5e9184a747cce9cf6c41fd4fc062c88931da80b26a3a3",
+    "compiler/smoke.mlir": "77c181def970bdc996010503adf2d75a8f581fac253be70c8833e7dc6c47d0f9",
+    "dependencies.lock.json": "24da84f90a8b17559eeb4c393a40d8915b101ef8d15bd411239bdc26afa85deb",
+    "kernels/linear.c": "c3d6a594ee466fb3891d9444646ca1ad974b08eda69395326a520791039fef44",
+    "kernels/linear.h": "fc9ee6b99623514a9e30666ec070696dccad0fdcaf58f63b4a481764ab2a1832",
+    "kernels/model_ops.c": "9151430b88418c1c9d35aae0eb3ffe93ea6f68de154f75db8846543fb5306e64",
+    "models/stories.py": "9e0a36ec75ceaffca1d61f205d5e7892691d4a8218e59a3f7f0ebb5e40d06aee",
+    "runtime/iree_config.h": "a5df7fcf73df7d743ce3ecbd37bc16cdd84c1c416dd8531fa5d90e4da43705fd",
+    "runtime/iree_runner.c": "e5f37945bd847927f8692c991e215be440c767b3e35e60bf01744edf87431e43",
+    "runtime/model_state.h": "e4e45b5646a8f2b72d0043040c583715ca0ee0356016d362507f26fffb9eb151",
+    "runtime/proton/console.c": "e871b4bcd690153c01d25389050919b9e2227b13193d11d023370b1f1040721a",
+    "runtime/proton/link.ld": "89afbcf199a7c208da8203ae509c4577452d914742fa4e5ea0b5a0d2c2eac45c",
+    "runtime/proton/platform.c": "97b1df2e05ad956f992f15abdb20d27502d02628ce6d855b45f94d3b3930641c",
+    "runtime/proton/platform.h": "b7437c3b39e3532cfd1b55851efc55503690f8cc4b14a6778b16a14e2e72265e",
+    "runtime/proton/start.S": "e88549303464a0a30be91acb7238ee603563e60e2630cad6e73a5ae16c932598",
+    "scripts/bootstrap.py": "e25c89bc31cbf8509817d235e00f5f7bfa9a07ff9abca0662dac69d6fa8a7a60",
+    "scripts/build.py": "0fb46ef1865de29f19ecaaf778f65aadf390f6b5ac713be5494052ad5c0e26a3",
+    "scripts/evidence.py": "f6ccea3e63e945a7f1019f02b0800e9f03f84d9cdbc670366a730d33808c2bc6",
+    "scripts/preflight.py": "f7db90b891f4360ba7bec2b70c22364d54b5453b2c980bc8cccbd297b0128f81",
+    "targets/proton_v1.json": "a16d37e2d3f1c098a051f50b150879154ad1f16a19b81c17be1ddd0107c27527",
+    "tests/generate_kernels.py": "92f36bbf07afddd3d4138eb4c105217ab4a5f860075230efce3941d234cbce2e",
+    "tests/kernels.c": "045b26bed0f443e448bcd3211118fb623ef3faa6c97853d4e1ebd7c79219a908",
+    "tests/model_host.c": "f5ff984c38c2c5e5e4410867a537fff3c39d39a057a1bbd4bbe7d470f2bf5839"
+  }
+}

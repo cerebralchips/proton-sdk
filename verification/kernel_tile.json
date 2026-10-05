@@ -1,0 +1,29 @@
+{
+  "run": "runs/20261004T223013.896363Z-kernel_tile",
+  "evidence": {
+    "result": "PASS",
+    "rtl_cycles": 73140,
+    "instructions": {
+      "retired": 46768,
+      "mzero": 32,
+      "mmacc": 128,
+      "vector": 0
+    },
+    "matrix_counts": [
+      32,
+      128
+    ],
+    "matched_commands": 160,
+    "sha256": {
+      "program.elf": "238e9172f9178eae70f271f854853712bd9ee7a9fd12407a55e3cf210264ccbe",
+      "program.dump": "864a5ffdb4de52826c3caafb5156b89b74ed2f9a051fb3e4c3c3638e91796434",
+      "rtl.log": "b4759a46fd1bab53c92bedcbef412094965edfd2609cbd850aa6f6db06a85703",
+      "matrix-events.csv": "21fe40395eed1676c762a2d410e05ea151ebd0a7a1c331d14b517422a98f1eb2"
+    }
+  },
+  "simulator_sha256": "ec3b5c2ac57cb5172f488efca49c491f56a1b1260cd1ed285706a094d8c30a1f",
+  "trace_sha256": {
+    "trace_hart_0.dasm": "d802e37d9e8d2def6ada418f8b700585b14db884a2cf31f0781d0cd3164cf303",
+    "retired-matrix.csv": "218f11900e9b8880341287337738801675c27717b05f8110392074ffdaf498be"
+  }
+}

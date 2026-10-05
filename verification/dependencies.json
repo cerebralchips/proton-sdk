@@ -1,0 +1,51 @@
+{
+  "compiler": "IREE (https://iree.dev):\n  IREE compiler version 3.11.0rc20260316 @ e4a3b0405d7d23554da26403658d0e8c3c5ecf25\n  LLVM version 23.0.0git\n  Optimized build\n",
+  "downloads": {
+    "deps/iree.tar.gz": {
+      "url": "https://github.com/iree-org/iree/archive/e4a3b0405d7d23554da26403658d0e8c3c5ecf25.tar.gz",
+      "sha256": "7642da781775834347368ad5522a94ae889fba69a59510c276dbf09dc77d374d"
+    },
+    "deps/flatcc.tar.gz": {
+      "url": "https://github.com/dvidelabs/flatcc/archive/9362cd00f0007d8cbee7bff86e90fb4b6b227ff3.tar.gz",
+      "sha256": "f77f842e996f5bbfa25305a7b38b40d1325fb44154f2bf9880c58356ece92c62"
+    },
+    "deps/printf.tar.gz": {
+      "url": "https://github.com/eyalroz/printf/archive/f1b728cbd5c6e10dc1f140f1574edfd1ccdcbedb.tar.gz",
+      "sha256": "66da4b07c99c9c07c5adc220b96e356fab384c6e4c24220b35116eb19fbd8904"
+    },
+    "models/stories260K.bin": {
+      "url": "https://huggingface.co/karpathy/tinyllamas/resolve/0bd21da7698eaf29a0d7de3992de8a46ef624add/stories260K/stories260K.bin",
+      "sha256": "b0a507e7ad0f626624f17112325e66691f9076d622e1d3274d103d00299f2696"
+    },
+    "models/tok512.bin": {
+      "url": "https://huggingface.co/karpathy/tinyllamas/resolve/0bd21da7698eaf29a0d7de3992de8a46ef624add/stories260K/tok512.bin",
+      "sha256": "037cb335abb25d1fa9e8ecae30ed2a3a8ace9302862ebcdc05d51a6bbb10c312"
+    },
+    "models/readme.md": {
+      "url": "https://huggingface.co/karpathy/tinyllamas/resolve/0bd21da7698eaf29a0d7de3992de8a46ef624add/stories260K/readme.md",
+      "sha256": "b743d79e10d9fdd57686aaef8fbb8ac337672dc0e098f9aebe672e4faea06ba4"
+    },
+    "models/run.c": {
+      "url": "https://raw.githubusercontent.com/karpathy/llama2.c/350e04fe35433e6d2941dce5a1f53308f87058eb/run.c",
+      "sha256": "9c4f2d5c6ae01b71726d1cc37530d71e60bff0ec7cc012565f16a43c1ca658bd"
+    },
+    "models/LICENSE": {
+      "url": "https://raw.githubusercontent.com/karpathy/llama2.c/350e04fe35433e6d2941dce5a1f53308f87058eb/LICENSE",
+      "sha256": "e87b912002f04cdfa837eaf7f70548ab79b9cb62a285495edf575f3da875aec4"
+    }
+  },
+  "source_integrity": {
+    "iree": {
+      "result": "PASS",
+      "source_files_compared": 6447
+    },
+    "flatcc": {
+      "result": "PASS",
+      "source_files_compared": 291
+    },
+    "printf": {
+      "result": "PASS",
+      "source_files_compared": 21
+    }
+  }
+}

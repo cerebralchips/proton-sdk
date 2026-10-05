@@ -1,0 +1,40 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "test": "kernels_bad",
+      "result": "PASS intended failure rejected",
+      "marker": "FAIL kernel=0 element=0"
+    },
+    {
+      "test": "smoke",
+      "result": "PASS intended failure rejected",
+      "marker": "Simulation timeout"
+    },
+    {
+      "result": "PASS",
+      "checks": [
+        {
+          "test": "missing-completion",
+          "result": "PASS rejected",
+          "reason": "Missing clean RTL completion or numerical PASS"
+        },
+        {
+          "test": "wrong-logit",
+          "result": "PASS rejected",
+          "reason": "Missing/nonfinite logits"
+        },
+        {
+          "test": "wrong-token",
+          "result": "PASS rejected",
+          "reason": "Reference token mismatch"
+        },
+        {
+          "test": "wrong-counter",
+          "result": "PASS rejected",
+          "reason": "Retirement/counter mismatch"
+        }
+      ]
+    }
+  ]
+}

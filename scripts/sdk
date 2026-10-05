@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+"""Stage portable SDK sources in the hardware lab's existing Linux mount."""
+import json
+import fcntl
+import os
+from pathlib import Path
+import shlex
+import shutil
+import subprocess
+import sys
+
+root = Path(__file__).resolve().parents[1]
+if len(sys.argv)==1 or sys.argv[1] in {'-h','--help'}:
+    print('Usage: scripts/sdk COMMAND [ARGS]\n'
+          '  bootstrap | model | host-model | smoke | kernels | graph\n'
+          '  model-run [model_step|model_matrix|model_scalar_step|model_scalar]\n'
+          '  wave | negative | report | status\n'
+          '  run NAME [MAX_CYCLES]\nSee docs/reproduce.md for gate order.')
+    sys.exit(0)
+if sys.argv[1]=='status':
+    sys.exit(subprocess.call([sys.executable,str(root/'scripts/status.py')]))
+config = json.loads((root / '.local.json').read_text()) if (root / '.local.json').exists() else {}
+hw = Path(os.environ.get('PROTON_HW_ROOT', config.get('hardware_root', '../Hardware/ara-lab')))
+if not hw.is_absolute():
+    hw = (root / hw).resolve()
+if not (hw / 'scripts/ara').is_file():
+    sys.exit('Set PROTON_HW_ROOT to the proton-npu checkout.')
+work = hw / 'artifacts/sdk-workspace'
+stage = work / 'src'
+stage.mkdir(parents=True, exist_ok=True)
+host_lock = (work / 'sdk-host.lock').open('a')
+try:
+    fcntl.flock(host_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+except BlockingIOError:
+    sys.exit('Another SDK command is active; source staging and runs are serialized.')
+for path in root.iterdir():
+    if path.name.startswith('.') or path.name in {'artifacts', 'build', 'third_party'}:
+        continue
+    dest = stage / path.name
+    if path.is_dir():
+        shutil.copytree(path, dest, dirs_exist_ok=True, ignore=shutil.ignore_patterns('__pycache__', 'cache'))
+        # Remove deleted source files so a stale staged copy cannot be compiled.
+        for old in sorted(dest.rglob('*'), reverse=True):
+            original = path / old.relative_to(dest)
+            if old.is_file() and not original.exists():
+                old.unlink()
+    else:
+        shutil.copy2(path, dest)
+if not (root / 'artifacts').exists():
+    (root / 'artifacts').symlink_to(os.path.relpath(work, root), target_is_directory=True)
+entry = 'python3 src/scripts/bootstrap.py' if sys.argv[1:] == ['bootstrap'] else 'venv/bin/python src/scripts/build.py ' + shlex.join(sys.argv[1:])
+command = ('source /ara-workspace/scripts/lab/env.sh; '
+           'exec 9>"$LAB_TOOLS/run.lock"; flock -n 9 || exit 75; '
+           'cd /ara-workspace/artifacts/sdk-workspace; '
+           'exec ' + entry)
+status = subprocess.call([str(hw / 'scripts/ara'), 'shell', 'bash', '-lc', command])
+if status == 0 and sys.argv[1:] == ['report']:
+    shutil.copytree(stage / 'verification', root / 'verification', dirs_exist_ok=True)
+sys.exit(status)

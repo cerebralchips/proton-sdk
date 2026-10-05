@@ -1,0 +1,57 @@
+TOKEN pos=0 id=403 invoke_cycles=2327901 piece= Once
+TOKEN pos=1 id=407 invoke_cycles=2369252 piece= upon
+TOKEN pos=2 id=261 invoke_cycles=2384633 piece= a
+TOKEN pos=3 id=378 invoke_cycles=2405343 piece= time
+TOKEN pos=4 id=432 invoke_cycles=2422359 piece=,
+TOKEN pos=5 id=383 invoke_cycles=2435142 piece= there
+TOKEN pos=6 id=286 invoke_cycles=2449978 piece= was
+TOKEN pos=7 id=261 invoke_cycles=2465037 piece= a
+TOKEN pos=8 id=376 invoke_cycles=2488514 piece= little
+TOKEN pos=9 id=298 invoke_cycles=2508894 piece= g
+TOKEN pos=10 id=315 invoke_cycles=2524602 piece=ir
+TOKEN pos=11 id=421 invoke_cycles=2539415 piece=l
+TOKEN pos=12 id=395 invoke_cycles=2555017 piece= named
+TOKEN pos=13 id=317 invoke_cycles=2568632 piece= Lily
+TOKEN pos=14 id=426 invoke_cycles=2579405 piece=.
+TOKEN pos=15 id=338 invoke_cycles=2598237 piece= She
+MATRIX_COUNTS zero=14048 macc=65152
+PROJECTION id=0 N=64 K=64 calls=16 zero=256 macc=1024
+PROJECTION id=1 N=32 K=64 calls=16 zero=128 macc=512
+PROJECTION id=2 N=32 K=64 calls=16 zero=128 macc=512
+PROJECTION id=3 N=64 K=64 calls=16 zero=256 macc=1024
+PROJECTION id=4 N=172 K=64 calls=16 zero=688 macc=2752
+PROJECTION id=5 N=172 K=64 calls=16 zero=688 macc=2752
+PROJECTION id=6 N=64 K=172 calls=16 zero=256 macc=2816
+PROJECTION id=7 N=64 K=64 calls=16 zero=256 macc=1024
+PROJECTION id=8 N=32 K=64 calls=16 zero=128 macc=512
+PROJECTION id=9 N=32 K=64 calls=16 zero=128 macc=512
+PROJECTION id=10 N=64 K=64 calls=16 zero=256 macc=1024
+PROJECTION id=11 N=172 K=64 calls=16 zero=688 macc=2752
+PROJECTION id=12 N=172 K=64 calls=16 zero=688 macc=2752
+PROJECTION id=13 N=64 K=172 calls=16 zero=256 macc=2816
+PROJECTION id=14 N=64 K=64 calls=16 zero=256 macc=1024
+PROJECTION id=15 N=32 K=64 calls=16 zero=128 macc=512
+PROJECTION id=16 N=32 K=64 calls=16 zero=128 macc=512
+PROJECTION id=17 N=64 K=64 calls=16 zero=256 macc=1024
+PROJECTION id=18 N=172 K=64 calls=16 zero=688 macc=2752
+PROJECTION id=19 N=172 K=64 calls=16 zero=688 macc=2752
+PROJECTION id=20 N=64 K=172 calls=16 zero=256 macc=2816
+PROJECTION id=21 N=64 K=64 calls=16 zero=256 macc=1024
+PROJECTION id=22 N=32 K=64 calls=16 zero=128 macc=512
+PROJECTION id=23 N=32 K=64 calls=16 zero=128 macc=512
+PROJECTION id=24 N=64 K=64 calls=16 zero=256 macc=1024
+PROJECTION id=25 N=172 K=64 calls=16 zero=688 macc=2752
+PROJECTION id=26 N=172 K=64 calls=16 zero=688 macc=2752
+PROJECTION id=27 N=64 K=172 calls=16 zero=256 macc=2816
+PROJECTION id=28 N=64 K=64 calls=16 zero=256 macc=1024
+PROJECTION id=29 N=32 K=64 calls=16 zero=128 macc=512
+PROJECTION id=30 N=32 K=64 calls=16 zero=128 macc=512
+PROJECTION id=31 N=64 K=64 calls=16 zero=256 macc=1024
+PROJECTION id=32 N=172 K=64 calls=16 zero=688 macc=2752
+PROJECTION id=33 N=172 K=64 calls=16 zero=688 macc=2752
+PROJECTION id=34 N=64 K=172 calls=16 zero=256 macc=2816
+PROJECTION id=35 N=512 K=64 calls=16 zero=2048 macc=8192
+MODEL steps=16 backend=1 invoke_cycles=39622361 max_error_bits=37000000
+MEMORY_GUARD PASS bounded_heap exhaustion_rejected stack_canary
+RESULT: PASS iree_model heap_peak=185728
+Executed cycles:  53512271

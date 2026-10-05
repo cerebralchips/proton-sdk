@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "target": "proton-v1-cva6-ara2-matrix",
+  "hardware_revision": "a6e2dcd5bf95fff4879bf1e61a94cdc26bf59fd2",
+  "triple": "riscv64-unknown-elf",
+  "march": "rv64gcv_zfh_zvfh",
+  "abi": "lp64d",
+  "harts": 1,
+  "ram_base": "0x80000000",
+  "ram_bytes": 16777216,
+  "stack_bytes": 262144,
+  "vector": {"lanes": 2, "vlen_bits": 2048, "elen_bits": 64},
+  "matrix": {
+    "abi_version": 1,
+    "base": "0xe0000000",
+    "ident": "0x000104104d415431",
+    "tile_m": 4, "tile_n": 4, "tile_k": 16,
+    "input_type": "signed_int8", "accumulator_type": "int32_modulo_2^32",
+    "opcode": "0x2b", "zero_funct7": 0, "macc_funct7": 1,
+    "transfer": "cpu_mmio", "completion": "blocking_instruction"
+  }
+}

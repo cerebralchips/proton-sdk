@@ -1,0 +1,51 @@
+{
+  "G0": {
+    "result": "PASS",
+    "evidence": [
+      "hardware-baseline.json",
+      "hardware-units.json"
+    ]
+  },
+  "G1": {
+    "result": "PASS",
+    "evidence": [
+      "dependencies.json",
+      "reference.json",
+      "memory.json"
+    ]
+  },
+  "G2": {
+    "result": "PASS",
+    "evidence": [
+      "smoke.json"
+    ]
+  },
+  "G3": {
+    "result": "PASS",
+    "evidence": [
+      "kernels.json",
+      "waveform.json"
+    ]
+  },
+  "G4": {
+    "result": "PASS",
+    "evidence": [
+      "model_matrix.json",
+      "model-provenance.json"
+    ]
+  },
+  "G5": {
+    "result": "PASS",
+    "evidence": [
+      "model_matrix.json",
+      "model-output.txt"
+    ]
+  },
+  "G6": {
+    "result": "PASS",
+    "evidence": [
+      "negative.json",
+      "comparison.json"
+    ]
+  }
+}

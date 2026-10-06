@@ -1,6 +1,6 @@
 # Reading the evidence
 
-`scripts/sdk report` creates these compact records only after the required local
+`scripts/sdk report` creates the original SRAM-only compact records only after the required local
 runs and failure tests pass. Raw artifacts stay outside version control under
 `artifacts/`. Each record identifies its original run, source provenance and ELF.
 
@@ -37,3 +37,32 @@ This evidence qualifies the pinned tiny-model deployment, not arbitrary models,
 full ISA conformance, all RVV sequences, Linux support, silicon frequency or DDR
 bandwidth. See [operator coverage](../docs/operator-mapping.md) and
 [bring-up findings](../docs/bringup-notes.md) for the exact boundaries.
+
+## DDR deployment
+
+`./scripts/sdk ddr-report` publishes the separately pinned SRAM + DDR deployment.
+See the [DDR guide](../docs/ddr.md) for commands and placement details. These
+records supplement the historical SRAM-only G0–G6 results above.
+
+| Record | What it establishes |
+| --- | --- |
+| [ddr.json](ddr.json) | 16-token matrix run, scalar/matrix first-step comparison, reference checks and DDR reads |
+| [ddr-provenance.json](ddr-provenance.json) | Hardware pin, SDK/RTL hashes and separate SRAM/DDR ELF segments |
+| [ddr-output.txt](ddr-output.txt) | Runtime placement, tokens, memory guards, cycle and DDR access counts |
+| [ddr-negative.json](ddr-negative.json) | Corrupted DDR placement and traffic evidence rejected |
+
+The host-only `python3 tests/ddr_preflight.py` checks both valid DDR edges and
+rejects 12 malformed or out-of-range memory contracts. To repeat the evidence
+negative test inside the provisioned Linux VM, run its Python with NumPy against
+a passing `*-model_step-ddr` run:
+
+```sh
+cd /ara-workspace/artifacts/sdk-workspace
+venv/bin/python src/tests/ddr_evidence_negative.py runs/<passing-model-step-ddr> ddr-negative.json
+```
+
+Raw DDR runs retain instruction and matrix event traces, but no full-model FST.
+All emitted logits must match the independent reference. Local SRAM baseline
+logits, when present, are also compared bit for bit. This deployment reads about
+255 KiB of distinct DDR weights; it does not establish a full-capacity sweep or
+a model larger than SRAM.

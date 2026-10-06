@@ -45,3 +45,15 @@ IREE static dispatch. It is not an automatic arbitrary-model lowering pipeline.
 All decoder operations run on target, but only the linear projections and final
 classifier use the INT8 matrix unit. Attention scores, softmax, value aggregation,
 RoPE, RMSNorm, activation and residual additions use scalar FP32.
+
+## DDR placement qualification
+
+The DDR profile preserves the model and kernel math sources and changes only
+placement, linker/loader integration and checks. The first cross-link attempt
+rejected the linker length suffix `4G`; specifying `0x100000000` fixed that syntax
+error. The failed build log is retained in local artifacts. The first successful
+model step checked all 512 logits, all 36 projections and 260,608 external reads.
+Its logits were bit-identical to the original SRAM deployment.
+
+This does not resolve the earlier compiler-generated RVV limitation. DDR weights
+are read by the existing CPU-fed matrix kernels; vector compilation remains off.

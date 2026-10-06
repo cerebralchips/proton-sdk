@@ -1,5 +1,9 @@
 # Reproduce locally
 
+For the latest SRAM + DDR target, use the [DDR procedure](ddr.md). The original
+commands below reproduce the SRAM-only baseline on the older hardware revision
+pinned in `targets/proton_v1.json`; they deliberately reject a different checkout.
+
 Use the existing provisioned proton-npu lab and its ARM64 Ubuntu VM. Set
 `PROTON_HW_ROOT` to the hardware checkout if it is not the sibling
 `../Hardware/ara-lab`. Commands below run from the SDK root on the Mac.

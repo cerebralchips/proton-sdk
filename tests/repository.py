@@ -35,3 +35,20 @@ assert model['model']['steps']==16
 assert model['matrix_counts']==[14048,65152]
 assert len(model['projections'])==36
 print(f'PASS: {len(files)} local source/record files, links, seven gates and executed model source hashes')
+ddr=json.loads((root/'verification/ddr.json').read_text())
+ddr_provenance=json.loads((root/'verification/ddr-provenance.json').read_text())
+assert ddr['result']=='PASS'
+assert ddr_provenance['target']==json.loads((root/'targets/proton_v1_ddr.json').read_text())
+for name in math_sources+['CMakeLists.txt','cmake/proton.cmake','runtime/proton/ddr_entry.c',
+                         'runtime/proton/link-ddr.ld','scripts/ddr.py','scripts/build.py',
+                         'scripts/preflight.py','targets/proton_v1_ddr.json']:
+    assert hashlib.sha256((root/name).read_bytes()).hexdigest()==ddr_provenance['sdk_sha256'][name],name
+for name,run in ddr['runs'].items():
+    assert run['result']=='PASS' and run['ddr']['result']=='PASS'
+    assert run['ddr']['reads']>0 and run['ddr']['writes']==0
+    assert run['ddr']['packed_weight_bytes']==260608
+full=ddr['runs']['model_matrix']['evidence']
+assert full['model']['steps']==16 and full['matrix_counts']==[14048,65152]
+assert ddr['scalar_matrix_comparison']=='PASS bit-identical first-step logits'
+assert json.loads((root/'verification/ddr-negative.json').read_text())['result']=='PASS'
+print('PASS: DDR deployment, memory traffic, source hashes and scalar/matrix comparison')

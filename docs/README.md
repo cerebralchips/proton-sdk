@@ -24,6 +24,7 @@ the contracts contributors must preserve when extending it.
 | Document | Questions it answers |
 | --- | --- |
 | [Implementation walkthrough](implementation.md) | What is implemented? How do model weights, IREE and matrix instructions connect? |
+| [DDR deployment](ddr.md) | How are weights placed in external memory and checked on RTL? |
 | [Architecture](architecture.md) | What belongs in each repository? What are the runtime and memory contracts? |
 | [Operator mapping](operator-mapping.md) | Which operations are accelerated? What are the packing, scaling and tile-count rules? |
 | [Reproduce locally](reproduce.md) | What environment is required? Which commands run each gate? Where are artifacts stored? |

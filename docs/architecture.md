@@ -43,7 +43,7 @@ is synchronous, CPU-fed and single-hart. Do not represent it as a DMA device.
 
 ## Memory
 
-This target has 16 MiB of behavioral SRAM main memory. The 1 GiB AXI decode window
+The original SRAM-only target has 16 MiB of behavioral SRAM main memory. The 1 GiB AXI decode window
 is larger than physical storage and aliases; it is not installed DDR. The SDK
 must constrain its ELF, heap, KV cache and stack to [0x80000000, 0x81000000).
 The upstream generic linker script advertises 32 MiB and startup takes its stack
@@ -52,6 +52,11 @@ from the decode-window end; the SDK supplies an explicit layout instead.
 The simulator's named RAM ELF loader (`-l ram,...,elf`) is used by the hardware
 runner. Its behavior must be verified for the SDK ELF; its separate 1 MiB region
 metadata is not evidence that the hardware has 1 MiB or that an arbitrary ELF fits.
+
+The [DDR profile](ddr.md) adds a separately pinned 4 GiB region at
+`0x100000000`, with exact SRAM decode and an address-aware ELF loader. Its linker
+places packed projection weights in external memory and working storage in SRAM.
+The allocator remains SRAM-only; weight placement is static and explicit.
 
 ## Sources
 

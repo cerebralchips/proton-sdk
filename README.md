@@ -17,8 +17,8 @@ Actual target output:
 | 160 actual matrix commands checked from FST tile signals | [Waveform record](verification/waveform.json) |
 | Wrong result, forced timeout and corrupted evidence rejected | [Failure tests](verification/negative.json) |
 
-No RTL or memory-size changes were needed. The target still has **16 MiB of
-behavioral main-memory SRAM**, not a DDR controller. The model ELF uses 830,080
+The original SRAM-only deployment used **16 MiB of behavioral main-memory SRAM**.
+Its model ELF uses 830,080
 bytes of allocated address span; measured heap high-water is 185,728 bytes, with a
 256 KiB reserved stack. See the [memory record](verification/memory.json).
 
@@ -38,6 +38,30 @@ Attention scores/softmax/value aggregation remain scalar. The graph is explicitl
 generated for this model; arbitrary framework-model import is a later milestone.
 Compiler-generated RVV is disabled after a verifier stall was observed and
 retained in the [bring-up notes](docs/bringup-notes.md).
+
+## DDR deployment
+
+A separate [DDR profile](docs/ddr.md) targets the latest qualified hardware with
+**16 MiB SRAM + 4 GiB simulated DDR**. All 36 packed INT8 projection matrices
+(260,608 bytes) live in DDR; activations, KV cache, heap and stack remain in SRAM.
+The CPU reads weights from DDR while executing the same IREE graph and matrix
+kernels. This is functional external-memory support, not a physical DDR PHY or
+a general large-model memory planner.
+
+```sh
+./scripts/sdk ddr-run model_step
+./scripts/sdk ddr-run model_matrix
+./scripts/sdk ddr-run model_scalar_step
+./scripts/sdk ddr-report
+```
+
+The [DDR verification record](verification/ddr.json) passes all 16 tokens and
+8,192 logits, bit-identical to the SRAM result. The trace records 4,169,728 DDR
+reads and all 79,200 expected matrix commands; the scalar first-step comparison
+also passes. The full DDR run took 91,466,323 RTL cycles.
+
+See the guide for hardware provisioning, revision pinning and generated-model
+prerequisites. The measurements in the first table describe the original SRAM profile.
 
 ## Documentation
 

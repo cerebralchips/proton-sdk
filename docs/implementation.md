@@ -90,7 +90,7 @@ quantization rules and instruction counts.
 | IREE integration | Explicit model-specific custom dispatches | General operator matching/lowering; evaluate standard ukernels |
 | Generation | Batch one, context bound 64, 16 checked greedy tokens from BOS | Prompt handling, larger contexts, batching and additional validation |
 | Linear kernel | W8A8, dimensions N/K bounded to 512 | Generalized shapes/layouts, batching and new acceptance cases |
-| Memory | 16 MiB behavioral main-memory SRAM; linked weights | Parameter loading/placement and a qualified platform for larger memory |
+| Memory | 16 MiB SRAM; optional 4 GiB functional DDR with packed projection weights | Larger-model qualification and compiler memory planning |
 | Vector execution | Current model compiled without RVV | Resolve and requalify the compiler-generated RVV sequence in the bring-up notes |
 | Other model families | Reusable runtime and matrix adapter | CNN convolution lowering and other operators; ViT patch embedding, LayerNorm, GELU and attention support |
 
@@ -103,8 +103,9 @@ sufficient.
 The hardware's tile dimensions do not cap the size of a complete matrix. The
 current kernel bounds are software limits. Memory must accommodate the runtime,
 weights, activations, KV cache, heap and stack together. The SoC's 1 GiB decoded
-address window is not installed RAM, and the current platform has no DDR
-controller. See [architecture](architecture.md) and [extension guidance](extending.md).
+address window in the original profile is not installed RAM. The separate
+[DDR profile](ddr.md) has 4 GiB of functional external memory and no physical DDR
+controller/PHY. See [architecture](architecture.md) and [extension guidance](extending.md).
 
 ## Evidence and interpretation
 

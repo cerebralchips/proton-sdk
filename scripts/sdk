@@ -14,7 +14,8 @@ if len(sys.argv)==1 or sys.argv[1] in {'-h','--help'}:
     print('Usage: scripts/sdk COMMAND [ARGS]\n'
           '  bootstrap | model | host-model | smoke | kernels | graph\n'
           '  model-run [model_step|model_matrix|model_scalar_step|model_scalar]\n'
-          '  wave | negative | report | status\n'
+          '  ddr-run [model_step|model_matrix|model_scalar_step] [LATENCY STALL]\n'
+          '  ddr-report | wave | negative | report | status\n'
           '  run NAME [MAX_CYCLES]\nSee docs/reproduce.md for gate order.')
     sys.exit(0)
 if sys.argv[1]=='status':
@@ -54,6 +55,6 @@ command = ('source /ara-workspace/scripts/lab/env.sh; '
            'cd /ara-workspace/artifacts/sdk-workspace; '
            'exec ' + entry)
 status = subprocess.call([str(hw / 'scripts/ara'), 'shell', 'bash', '-lc', command])
-if status == 0 and sys.argv[1:] == ['report']:
+if status == 0 and sys.argv[1:] in (['report'], ['ddr-report']):
     shutil.copytree(stage / 'verification', root / 'verification', dirs_exist_ok=True)
 sys.exit(status)

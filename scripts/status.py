@@ -12,7 +12,9 @@ for p in sorted((work/'runs').glob('*')):
         print(p.name,d['result'],f"cycles={d.get('rtl_cycles','unavailable')}")
     else:
         print(p.name,'INCOMPLETE (running or interrupted)')
-for p in sorted((work/'attempts').glob('*/model_matrix-rtl.log'))[-1:]:
+logs=sorted((work/'attempts').glob('*/model*-rtl.log'))
+if logs:
+    p=logs[-1]
     tokens=[s for s in p.read_text().splitlines() if s.startswith('TOKEN ')]
-    print(f'Latest multi-token log: {len(tokens)}/16 completed tokens')
+    print(f'Latest model log: {p.parent.name}/{p.name}; {len(tokens)} completed tokens')
     for s in tokens: print(s)

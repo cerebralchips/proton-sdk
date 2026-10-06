@@ -84,26 +84,32 @@ def build_smoke():
          f'-DCMAKE_TOOLCHAIN_FILE={ROOT}/cmake/proton.cmake','-DCMAKE_BUILD_TYPE=MinSizeRel'],'sdk-config')
     run(['cmake','--build',WORK/'build','--target','smoke','-j4'],'sdk-build')
 
-def configure():
-    run(['cmake','-G','Ninja','-S',ROOT,'-B',WORK/'build',f'-DPROTON_WORK={WORK}',
+def configure(ddr=False):
+    run(['cmake','-G','Ninja','-S',ROOT,'-B',WORK/('build-ddr' if ddr else 'build'),
+         f'-DPROTON_DDR={"ON" if ddr else "OFF"}',f'-DPROTON_WORK={WORK}',
          f'-DCMAKE_TOOLCHAIN_FILE={ROOT}/cmake/proton.cmake','-DCMAKE_BUILD_TYPE=MinSizeRel'],'sdk-config')
 
-def simulate(name, max_cycles=5000000, trace=False):
+def simulate(name, max_cycles=5000000, trace=False, ddr=False, latency=1, stall=0):
     if not re.fullmatch(r'[a-z][a-z0-9_]*',name) or max_cycles<1:
         raise ValueError('Invalid application name or cycle limit')
-    dest=WORK/'runs'/f'{STAMP}-{name}'; dest.mkdir(parents=True)
-    elf=WORK/'build'/name
+    dest=WORK/'runs'/(f'{STAMP}-{name}'+('-ddr' if ddr else '')); dest.mkdir(parents=True)
+    elf=WORK/('build-ddr' if ddr else 'build')/name
     from preflight import validate
-    (dest/'provenance.json').write_text(json.dumps(validate(ROOT,elf),indent=2)+'\n')
+    (dest/'provenance.json').write_text(json.dumps(validate(ROOT,elf,'proton_v1_ddr.json' if ddr else 'proton_v1.json'),indent=2)+'\n')
     import shutil
     shutil.copy2(elf,dest/'program.elf')
     run([TOOLS/'llvm/bin/llvm-objdump','-d',elf],name+'-dump')
     shutil.copy2(LOGS/(name+'-dump.log'),dest/'program.dump')
-    sim=Path('/ara-workspace/upstream/ara/hardware')/('build-matrix-wave' if trace else 'build-matrix')/'verilator/Vara_tb_verilator'
+    sim=Path('/ara-workspace/upstream/ara/hardware')/('build-ddr-wave' if ddr else ('build-matrix-wave' if trace else 'build-matrix'))/'verilator/Vara_tb_verilator'
     result={'result':'INCOMPLETE','elf_sha256':hashlib.sha256(elf.read_bytes()).hexdigest(),
             'simulator_sha256':hashlib.sha256(sim.read_bytes()).hexdigest()}
+    result.update(profile='ddr' if ddr else 'sram', latency=latency if ddr else None, stall=stall if ddr else None)
     try:
-        run([sim,'-c',str(max_cycles),*(['-t'] if trace else []),'-l',f'ram,{elf},elf'],name+'-rtl',cwd=dest,timeout=7200)
+        import time
+        started=time.monotonic()
+        loader=[f'--load-elf={elf}',f'+ddr_latency={latency}',f'+ddr_stall={stall}'] if ddr else ['-l',f'ram,{elf},elf']
+        run(['stdbuf','-oL',sim,'-c',str(max_cycles),*(['-t'] if trace else []),*loader],name+'-rtl',cwd=dest,timeout=7200)
+        result['wall_seconds']=time.monotonic()-started
         text=(LOGS/(name+'-rtl.log')).read_text()
         shutil.copy2(LOGS/(name+'-rtl.log'),dest/'rtl.log')
         if '*** SUCCESS ***' not in text or 'RESULT: PASS' not in text or any(x in text for x in ['TRAP','FAIL','Simulation timeout','%Error']):
@@ -113,6 +119,9 @@ def simulate(name, max_cycles=5000000, trace=False):
         result.update(result='PASS',rtl_cycles=int(match[1]))
         from evidence import check
         result['evidence']=check(dest, WORK/'generated/model/reference.npz' if name.startswith('model_') else None)
+        if ddr:
+            from ddr import check_run
+            result['ddr']=check_run(dest, WORK)
         if trace:
             waves=list(dest.glob('*.fst'))
             if len(waves)!=1 or not waves[0].stat().st_size: raise RuntimeError('Missing FST')
@@ -176,6 +185,20 @@ if __name__=='__main__':
         outcomes.append(json.loads((LOGS/'evidence-negative.log').read_text()))
         (LOGS/'negative-results.json').write_text(json.dumps({'result':'PASS','checks':outcomes},indent=2)+'\n')
         print(json.dumps(outcomes,indent=2))
+    elif sys.argv[1]=='ddr-run':
+        from ddr import prepare_weights
+        name=sys.argv[2] if len(sys.argv)>2 else 'model_step'
+        if name not in {'model_step','model_matrix','model_scalar_step'}: raise ValueError('Unsupported DDR example')
+        latency=int(sys.argv[3]) if len(sys.argv)>3 else 1
+        stall=int(sys.argv[4]) if len(sys.argv)>4 else 0
+        if not 1<=latency<=100 or not 0<=stall<=100: raise ValueError('Invalid DDR delay')
+        prepare_weights(WORK/'generated/model')
+        configure(ddr=True)
+        run(['cmake','--build',WORK/'build-ddr','--target',name,'-j4'],'ddr-build')
+        simulate(name,150000000,ddr=True,latency=latency,stall=stall)
+    elif sys.argv[1]=='ddr-report':
+        from ddr import report
+        report(ROOT,WORK)
     elif sys.argv[1]=='report':
         run([sys.executable,ROOT/'scripts/report.py'],'report')
         print((LOGS/'report.log').read_text())

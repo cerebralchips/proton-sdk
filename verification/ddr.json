@@ -1,0 +1,1510 @@
+{
+  "result": "PASS",
+  "runs": {
+    "model_step": {
+      "run": "20261006T065145.340060Z-model_step-ddr",
+      "result": "PASS",
+      "elf_sha256": "9330bf2cce7943ce98475bffd904859da6da114733376b5b8f0b2472d115dd55",
+      "simulator_sha256": "be3c38af7cd30aaa454e2c7cc89333d23ff333f819b44a9e11a269c66a8807fc",
+      "profile": "ddr",
+      "latency": 1,
+      "stall": 0,
+      "wall_seconds": 151.01725258800434,
+      "rtl_cycles": 6946217,
+      "evidence": {
+        "result": "PASS",
+        "rtl_cycles": 6946217,
+        "instructions": {
+          "retired": 2720302,
+          "mzero": 878,
+          "mmacc": 4072,
+          "vector": 0
+        },
+        "matrix_counts": [
+          878,
+          4072
+        ],
+        "matched_commands": 4950,
+        "projections": [
+          [
+            0,
+            64,
+            64,
+            1,
+            16,
+            64
+          ],
+          [
+            1,
+            32,
+            64,
+            1,
+            8,
+            32
+          ],
+          [
+            2,
+            32,
+            64,
+            1,
+            8,
+            32
+          ],
+          [
+            3,
+            64,
+            64,
+            1,
+            16,
+            64
+          ],
+          [
+            4,
+            172,
+            64,
+            1,
+            43,
+            172
+          ],
+          [
+            5,
+            172,
+            64,
+            1,
+            43,
+            172
+          ],
+          [
+            6,
+            64,
+            172,
+            1,
+            16,
+            176
+          ],
+          [
+            7,
+            64,
+            64,
+            1,
+            16,
+            64
+          ],
+          [
+            8,
+            32,
+            64,
+            1,
+            8,
+            32
+          ],
+          [
+            9,
+            32,
+            64,
+            1,
+            8,
+            32
+          ],
+          [
+            10,
+            64,
+            64,
+            1,
+            16,
+            64
+          ],
+          [
+            11,
+            172,
+            64,
+            1,
+            43,
+            172
+          ],
+          [
+            12,
+            172,
+            64,
+            1,
+            43,
+            172
+          ],
+          [
+            13,
+            64,
+            172,
+            1,
+            16,
+            176
+          ],
+          [
+            14,
+            64,
+            64,
+            1,
+            16,
+            64
+          ],
+          [
+            15,
+            32,
+            64,
+            1,
+            8,
+            32
+          ],
+          [
+            16,
+            32,
+            64,
+            1,
+            8,
+            32
+          ],
+          [
+            17,
+            64,
+            64,
+            1,
+            16,
+            64
+          ],
+          [
+            18,
+            172,
+            64,
+            1,
+            43,
+            172
+          ],
+          [
+            19,
+            172,
+            64,
+            1,
+            43,
+            172
+          ],
+          [
+            20,
+            64,
+            172,
+            1,
+            16,
+            176
+          ],
+          [
+            21,
+            64,
+            64,
+            1,
+            16,
+            64
+          ],
+          [
+            22,
+            32,
+            64,
+            1,
+            8,
+            32
+          ],
+          [
+            23,
+            32,
+            64,
+            1,
+            8,
+            32
+          ],
+          [
+            24,
+            64,
+            64,
+            1,
+            16,
+            64
+          ],
+          [
+            25,
+            172,
+            64,
+            1,
+            43,
+            172
+          ],
+          [
+            26,
+            172,
+            64,
+            1,
+            43,
+            172
+          ],
+          [
+            27,
+            64,
+            172,
+            1,
+            16,
+            176
+          ],
+          [
+            28,
+            64,
+            64,
+            1,
+            16,
+            64
+          ],
+          [
+            29,
+            32,
+            64,
+            1,
+            8,
+            32
+          ],
+          [
+            30,
+            32,
+            64,
+            1,
+            8,
+            32
+          ],
+          [
+            31,
+            64,
+            64,
+            1,
+            16,
+            64
+          ],
+          [
+            32,
+            172,
+            64,
+            1,
+            43,
+            172
+          ],
+          [
+            33,
+            172,
+            64,
+            1,
+            43,
+            172
+          ],
+          [
+            34,
+            64,
+            172,
+            1,
+            16,
+            176
+          ],
+          [
+            35,
+            512,
+            64,
+            1,
+            128,
+            512
+          ]
+        ],
+        "model": {
+          "steps": 1,
+          "backend": 1,
+          "tokens": [
+            403
+          ],
+          "invoke_cycles": 4706513,
+          "max_abs_logit_error": 3.814697265625e-06,
+          "rms_logit_error": 1.079134790415992e-06
+        },
+        "sha256": {
+          "program.elf": "9330bf2cce7943ce98475bffd904859da6da114733376b5b8f0b2472d115dd55",
+          "program.dump": "9e4ad75c40b0119948234aab86ace6475f7409f3492144a77e43f5bb0bf58952",
+          "rtl.log": "8431f895f75efca2f30f02994a277e122cead007f3f80d82e3ec6210ba7e12b5",
+          "matrix-events.csv": "2cf9428dd0d3f11ea9959a0efaf9d2d321f349772ef08e3e4f01697aaa491bf5"
+        }
+      },
+      "ddr": {
+        "result": "PASS",
+        "packed_weight_bytes": 260608,
+        "weights": 36,
+        "reads": 260608,
+        "writes": 0,
+        "allocated_words": 32576,
+        "placement": {
+          "source_sha256": "36d1711f515fccc98bd1c62fc193cd018addd4d7c8bca31f0eafd89455506e1b",
+          "ddr_source_sha256": "f30a61a0958896e1041d6f25bbfea515e4ef7f90d967617de8bb7f9d37c8266f",
+          "packed_bytes": 260608,
+          "weights": [
+            {
+              "name": "w_q0",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k0",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v0",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o0",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up0",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate0",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down0",
+              "bytes": 11264
+            },
+            {
+              "name": "w_q1",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k1",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v1",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o1",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up1",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate1",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down1",
+              "bytes": 11264
+            },
+            {
+              "name": "w_q2",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k2",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v2",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o2",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up2",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate2",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down2",
+              "bytes": 11264
+            },
+            {
+              "name": "w_q3",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k3",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v3",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o3",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up3",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate3",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down3",
+              "bytes": 11264
+            },
+            {
+              "name": "w_q4",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k4",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v4",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o4",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up4",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate4",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down4",
+              "bytes": 11264
+            },
+            {
+              "name": "w_cls",
+              "bytes": 32768
+            }
+          ]
+        },
+        "sram_comparison": {
+          "result": "PASS bit-identical",
+          "logits": 512,
+          "baseline_result_sha256": "091b4e1b9c428a7f2af6c4c7ffc6feaaffe291290c1635e3d9740a113126f231"
+        }
+      }
+    },
+    "model_matrix": {
+      "run": "20261006T080717.286009Z-model_matrix-ddr",
+      "result": "PASS",
+      "elf_sha256": "9dbb782299f135b36ff3b83a03c2a816fe41eb515b180aafdde23d8890ba0f75",
+      "simulator_sha256": "be3c38af7cd30aaa454e2c7cc89333d23ff333f819b44a9e11a269c66a8807fc",
+      "profile": "ddr",
+      "latency": 1,
+      "stall": 0,
+      "wall_seconds": 2014.640311480005,
+      "rtl_cycles": 91466323,
+      "evidence": {
+        "result": "PASS",
+        "rtl_cycles": 91466323,
+        "instructions": {
+          "retired": 32409681,
+          "mzero": 14048,
+          "mmacc": 65152,
+          "vector": 0
+        },
+        "matrix_counts": [
+          14048,
+          65152
+        ],
+        "matched_commands": 79200,
+        "projections": [
+          [
+            0,
+            64,
+            64,
+            16,
+            256,
+            1024
+          ],
+          [
+            1,
+            32,
+            64,
+            16,
+            128,
+            512
+          ],
+          [
+            2,
+            32,
+            64,
+            16,
+            128,
+            512
+          ],
+          [
+            3,
+            64,
+            64,
+            16,
+            256,
+            1024
+          ],
+          [
+            4,
+            172,
+            64,
+            16,
+            688,
+            2752
+          ],
+          [
+            5,
+            172,
+            64,
+            16,
+            688,
+            2752
+          ],
+          [
+            6,
+            64,
+            172,
+            16,
+            256,
+            2816
+          ],
+          [
+            7,
+            64,
+            64,
+            16,
+            256,
+            1024
+          ],
+          [
+            8,
+            32,
+            64,
+            16,
+            128,
+            512
+          ],
+          [
+            9,
+            32,
+            64,
+            16,
+            128,
+            512
+          ],
+          [
+            10,
+            64,
+            64,
+            16,
+            256,
+            1024
+          ],
+          [
+            11,
+            172,
+            64,
+            16,
+            688,
+            2752
+          ],
+          [
+            12,
+            172,
+            64,
+            16,
+            688,
+            2752
+          ],
+          [
+            13,
+            64,
+            172,
+            16,
+            256,
+            2816
+          ],
+          [
+            14,
+            64,
+            64,
+            16,
+            256,
+            1024
+          ],
+          [
+            15,
+            32,
+            64,
+            16,
+            128,
+            512
+          ],
+          [
+            16,
+            32,
+            64,
+            16,
+            128,
+            512
+          ],
+          [
+            17,
+            64,
+            64,
+            16,
+            256,
+            1024
+          ],
+          [
+            18,
+            172,
+            64,
+            16,
+            688,
+            2752
+          ],
+          [
+            19,
+            172,
+            64,
+            16,
+            688,
+            2752
+          ],
+          [
+            20,
+            64,
+            172,
+            16,
+            256,
+            2816
+          ],
+          [
+            21,
+            64,
+            64,
+            16,
+            256,
+            1024
+          ],
+          [
+            22,
+            32,
+            64,
+            16,
+            128,
+            512
+          ],
+          [
+            23,
+            32,
+            64,
+            16,
+            128,
+            512
+          ],
+          [
+            24,
+            64,
+            64,
+            16,
+            256,
+            1024
+          ],
+          [
+            25,
+            172,
+            64,
+            16,
+            688,
+            2752
+          ],
+          [
+            26,
+            172,
+            64,
+            16,
+            688,
+            2752
+          ],
+          [
+            27,
+            64,
+            172,
+            16,
+            256,
+            2816
+          ],
+          [
+            28,
+            64,
+            64,
+            16,
+            256,
+            1024
+          ],
+          [
+            29,
+            32,
+            64,
+            16,
+            128,
+            512
+          ],
+          [
+            30,
+            32,
+            64,
+            16,
+            128,
+            512
+          ],
+          [
+            31,
+            64,
+            64,
+            16,
+            256,
+            1024
+          ],
+          [
+            32,
+            172,
+            64,
+            16,
+            688,
+            2752
+          ],
+          [
+            33,
+            172,
+            64,
+            16,
+            688,
+            2752
+          ],
+          [
+            34,
+            64,
+            172,
+            16,
+            256,
+            2816
+          ],
+          [
+            35,
+            512,
+            64,
+            16,
+            2048,
+            8192
+          ]
+        ],
+        "model": {
+          "steps": 16,
+          "backend": 1,
+          "tokens": [
+            403,
+            407,
+            261,
+            378,
+            432,
+            383,
+            286,
+            261,
+            376,
+            298,
+            315,
+            421,
+            395,
+            317,
+            426,
+            338
+          ],
+          "invoke_cycles": 77516295,
+          "max_abs_logit_error": 7.62939453125e-06,
+          "rms_logit_error": 1.3341248177312082e-06
+        },
+        "sha256": {
+          "program.elf": "9dbb782299f135b36ff3b83a03c2a816fe41eb515b180aafdde23d8890ba0f75",
+          "program.dump": "6b1305647d6d6ed4212752fe0719b6ae319b1b1ade4ea5d6fc6877e29eabfca9",
+          "rtl.log": "1c1726fcf0b3bd77e8100c4cd8b4ec6fb26aa1334f143b5dc1b39329d75c5bff",
+          "matrix-events.csv": "f2f97b7b34569c2a21fd9ce4b0e5eeb41fc39d90341def26fb9afbf679ce6579"
+        }
+      },
+      "ddr": {
+        "result": "PASS",
+        "packed_weight_bytes": 260608,
+        "weights": 36,
+        "reads": 4169728,
+        "writes": 0,
+        "allocated_words": 32576,
+        "placement": {
+          "source_sha256": "36d1711f515fccc98bd1c62fc193cd018addd4d7c8bca31f0eafd89455506e1b",
+          "ddr_source_sha256": "f30a61a0958896e1041d6f25bbfea515e4ef7f90d967617de8bb7f9d37c8266f",
+          "packed_bytes": 260608,
+          "weights": [
+            {
+              "name": "w_q0",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k0",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v0",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o0",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up0",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate0",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down0",
+              "bytes": 11264
+            },
+            {
+              "name": "w_q1",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k1",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v1",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o1",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up1",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate1",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down1",
+              "bytes": 11264
+            },
+            {
+              "name": "w_q2",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k2",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v2",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o2",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up2",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate2",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down2",
+              "bytes": 11264
+            },
+            {
+              "name": "w_q3",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k3",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v3",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o3",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up3",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate3",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down3",
+              "bytes": 11264
+            },
+            {
+              "name": "w_q4",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k4",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v4",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o4",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up4",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate4",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down4",
+              "bytes": 11264
+            },
+            {
+              "name": "w_cls",
+              "bytes": 32768
+            }
+          ]
+        },
+        "sram_comparison": {
+          "result": "PASS bit-identical",
+          "logits": 8192,
+          "baseline_result_sha256": "091b4e1b9c428a7f2af6c4c7ffc6feaaffe291290c1635e3d9740a113126f231"
+        }
+      }
+    },
+    "model_scalar_step": {
+      "run": "20261006T145913.380545Z-model_scalar_step-ddr",
+      "result": "PASS",
+      "elf_sha256": "95ccaf3d48b778bddd6efd2db69921055a543c781e4890be1de9f0ed6c407a98",
+      "simulator_sha256": "be3c38af7cd30aaa454e2c7cc89333d23ff333f819b44a9e11a269c66a8807fc",
+      "profile": "ddr",
+      "latency": 1,
+      "stall": 0,
+      "wall_seconds": 241.70031149699935,
+      "rtl_cycles": 11168930,
+      "evidence": {
+        "result": "PASS",
+        "rtl_cycles": 11168930,
+        "instructions": {
+          "retired": 5900941,
+          "mzero": 0,
+          "mmacc": 0,
+          "vector": 0
+        },
+        "matrix_counts": [
+          0,
+          0
+        ],
+        "matched_commands": 0,
+        "projections": [
+          [
+            0,
+            64,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            32,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            32,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            3,
+            64,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            4,
+            172,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            5,
+            172,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            6,
+            64,
+            172,
+            1,
+            0,
+            0
+          ],
+          [
+            7,
+            64,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            8,
+            32,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            9,
+            32,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            10,
+            64,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            11,
+            172,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            12,
+            172,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            13,
+            64,
+            172,
+            1,
+            0,
+            0
+          ],
+          [
+            14,
+            64,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            15,
+            32,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            16,
+            32,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            17,
+            64,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            18,
+            172,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            19,
+            172,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            20,
+            64,
+            172,
+            1,
+            0,
+            0
+          ],
+          [
+            21,
+            64,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            22,
+            32,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            23,
+            32,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            24,
+            64,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            25,
+            172,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            26,
+            172,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            27,
+            64,
+            172,
+            1,
+            0,
+            0
+          ],
+          [
+            28,
+            64,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            29,
+            32,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            30,
+            32,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            31,
+            64,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            32,
+            172,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            33,
+            172,
+            64,
+            1,
+            0,
+            0
+          ],
+          [
+            34,
+            64,
+            172,
+            1,
+            0,
+            0
+          ],
+          [
+            35,
+            512,
+            64,
+            1,
+            0,
+            0
+          ]
+        ],
+        "model": {
+          "steps": 1,
+          "backend": 0,
+          "tokens": [
+            403
+          ],
+          "invoke_cycles": 8942117,
+          "max_abs_logit_error": 3.814697265625e-06,
+          "rms_logit_error": 1.079134790415992e-06
+        },
+        "sha256": {
+          "program.elf": "95ccaf3d48b778bddd6efd2db69921055a543c781e4890be1de9f0ed6c407a98",
+          "program.dump": "1674b20641c44846356755e5915e74ef5a529a7e5cd2fefb4ac3981956e731c1",
+          "rtl.log": "899f3c509cf85e1bea96097efc2213365028437311c54fa046be040e9cf36491",
+          "matrix-events.csv": "702526df50e815479865ffd732977b6a7a2969e836105ad83862be4b0516990b"
+        }
+      },
+      "ddr": {
+        "result": "PASS",
+        "packed_weight_bytes": 260608,
+        "weights": 36,
+        "reads": 259328,
+        "writes": 0,
+        "allocated_words": 32576,
+        "placement": {
+          "source_sha256": "36d1711f515fccc98bd1c62fc193cd018addd4d7c8bca31f0eafd89455506e1b",
+          "ddr_source_sha256": "f30a61a0958896e1041d6f25bbfea515e4ef7f90d967617de8bb7f9d37c8266f",
+          "packed_bytes": 260608,
+          "weights": [
+            {
+              "name": "w_q0",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k0",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v0",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o0",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up0",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate0",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down0",
+              "bytes": 11264
+            },
+            {
+              "name": "w_q1",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k1",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v1",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o1",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up1",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate1",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down1",
+              "bytes": 11264
+            },
+            {
+              "name": "w_q2",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k2",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v2",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o2",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up2",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate2",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down2",
+              "bytes": 11264
+            },
+            {
+              "name": "w_q3",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k3",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v3",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o3",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up3",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate3",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down3",
+              "bytes": 11264
+            },
+            {
+              "name": "w_q4",
+              "bytes": 4096
+            },
+            {
+              "name": "w_k4",
+              "bytes": 2048
+            },
+            {
+              "name": "w_v4",
+              "bytes": 2048
+            },
+            {
+              "name": "w_o4",
+              "bytes": 4096
+            },
+            {
+              "name": "w_up4",
+              "bytes": 11008
+            },
+            {
+              "name": "w_gate4",
+              "bytes": 11008
+            },
+            {
+              "name": "w_down4",
+              "bytes": 11264
+            },
+            {
+              "name": "w_cls",
+              "bytes": 32768
+            }
+          ]
+        },
+        "sram_comparison": {
+          "result": "PASS bit-identical",
+          "logits": 512,
+          "baseline_result_sha256": "091b4e1b9c428a7f2af6c4c7ffc6feaaffe291290c1635e3d9740a113126f231"
+        }
+      }
+    }
+  },
+  "scalar_matrix_comparison": "PASS bit-identical first-step logits",
+  "reference_sha256": "ef49fea539db747f5580664c8d3c65e5998bbb1f2b49fef5f1888cd736fb034e"
+}

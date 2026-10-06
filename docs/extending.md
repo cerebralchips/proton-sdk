@@ -49,11 +49,11 @@ to IREE's memory planner, and use four tile rows during prefill. Keep the scalar
 comparison on the same W8A8 arithmetic. Compare logits before accepting a faster
 kernel, especially when changing reduction order or quantization.
 
-The current 16 MiB simulated RAM is sufficient for this milestone. A few GiB of
-future DDR would require a real memory interface/backing model, a compatible
-address map and loader, and a new memory budget. The 1 GiB decoded address range
-in the present SoC must never be mistaken for installed memory. Quantization does
-not eliminate activation, scratch, runtime or KV-cache storage.
+The [DDR profile](ddr.md) provides 16 MiB SRAM plus 4 GiB of functional external
+memory with a compatible address map, loader and explicit packed-weight placement.
+A larger model still needs a qualified operator set, memory budget and reference.
+Compiler tiling, prefetching, staging and allocator policies are future work.
+Quantization does not eliminate activation, scratch, runtime or KV-cache storage.
 
 ## RVV and Linux
 

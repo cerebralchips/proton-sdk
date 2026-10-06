@@ -37,3 +37,12 @@ cycle-counter boundaries. Verilator wall time is not device throughput.
 Retain raw logs, model/compiler hashes, generated MLIR, VMFB, object, ELF,
 disassembly, instruction/event traces and result JSON. A representative FST can
 establish tile activity without recording an entire language-model run waveform.
+
+## DDR profile
+
+The historical G0–G6 records above belong to the original SRAM-only target.
+The separately pinned [DDR deployment](ddr.md) adds ELF-region rejection tests,
+runtime weight placement checks, nonzero external reads, full-model reference
+comparison, and scalar/matrix agreement. It retains the same numerical envelope
+and architectural trace requirements. A DDR model pass covers the exercised
+weights and program; it does not qualify every external address or larger models.

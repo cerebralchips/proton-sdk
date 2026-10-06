@@ -1,0 +1,41 @@
+{
+  "result": "PASS",
+  "positive_run": "20261006T065145.340060Z-model_step-ddr",
+  "checks": [
+    {
+      "test": "missing DDR reads",
+      "result": "PASS rejected",
+      "reason": "Missing external reads or writes to read-only weights"
+    },
+    {
+      "test": "writes to weights",
+      "result": "PASS rejected",
+      "reason": "Missing external reads or writes to read-only weights"
+    },
+    {
+      "test": "weight in SRAM",
+      "result": "PASS rejected",
+      "reason": "Weight is outside initialized DDR ELF segments"
+    },
+    {
+      "test": "weight beyond DDR",
+      "result": "PASS rejected",
+      "reason": "Weight is outside initialized DDR ELF segments"
+    },
+    {
+      "test": "missing projection",
+      "result": "PASS rejected",
+      "reason": "Missing DDR weight placement checks"
+    },
+    {
+      "test": "wrong weight size",
+      "result": "PASS rejected",
+      "reason": "Weight is outside initialized DDR ELF segments"
+    },
+    {
+      "test": "missing loaded DDR segment",
+      "result": "PASS rejected",
+      "reason": "Weight is outside initialized DDR ELF segments"
+    }
+  ]
+}

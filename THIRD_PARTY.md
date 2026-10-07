@@ -33,3 +33,9 @@ The optional Stories260K ONNX host frontend additionally uses:
 The isolated environment pins direct and transitive packages in
 [onnx.lock.json](models/stories260k/onnx.lock.json). Installed distributions retain
 their upstream notices; generated model binaries are not redistributed in Git.
+
+The one-token RTL frontend build applies a local
+[IREE dispatch-binding alignment patch](patches/iree/0001-align-dispatch-bindings.patch)
+to a generated source copy. The original pinned dependency remains unchanged;
+the patch retains IREE's Apache-2.0 with LLVM exceptions terms. See the
+[runtime-fix explanation](docs/frontend-rtl.md#runtime-alignment-fix).

@@ -75,3 +75,14 @@ negative gates, source/model/artifact hashes and stage durations. It establishes
 no new RTL or matrix-acceleration result. Reproduce with
 `./scripts/sdk onnx-bootstrap` and `./scripts/sdk onnx-validate`; see the
 [frontend guide](../docs/frontends.md).
+
+## Imported frontend — one-token RTL baseline
+
+- [FP32](frontend-rtl-fp32.json): one token, full 512-logit and 20,480-cache-element comparison.
+- [W8A8](frontend-rtl-w8a8.json): the same single-invocation contract and corresponding quantized oracle.
+- [Retirement audit](frontend-rtl-retirement.json): actual scalar-only retirement, no matrix events or DDR accesses.
+
+Reproduce with `./scripts/frontend-rtl`; it never launches a multi-token loop.
+The [guide](../docs/frontend-rtl.md) documents cycle boundaries, both wall timers,
+the isolated runtime alignment patch and retained failures. These records are
+separate from the historical accelerated 16-token deployment.

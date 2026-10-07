@@ -1,0 +1,37 @@
+{
+  "result": "PASS",
+  "runs": {
+    "fp32": {
+      "result": "PASS",
+      "run_id": "20261007T143514.605344Z",
+      "instructions": {
+        "retired": 6994155,
+        "vector": 0,
+        "matrix": 0
+      },
+      "ddr_reads": 0,
+      "ddr_writes": 0,
+      "matrix_events": 0,
+      "result_sha256": "fef8f3ec198fb22fc627cf0a495f3708289c78cf014cc194fff81b8e10a38836",
+      "trace_sha256": "18c26b1d55faab7a9e7aef17a272ed92920cc048f0b830c6c7e900094f048705",
+      "matrix_events_sha256": "702526df50e815479865ffd732977b6a7a2969e836105ad83862be4b0516990b"
+    },
+    "w8a8": {
+      "result": "PASS",
+      "run_id": "20261007T143514.605344Z",
+      "instructions": {
+        "retired": 8044759,
+        "vector": 0,
+        "matrix": 0
+      },
+      "ddr_reads": 0,
+      "ddr_writes": 0,
+      "matrix_events": 0,
+      "result_sha256": "505eb4dc0d0e722c15fbc73deca987c76290ca9db1c48a59db4ea6b72ca196af",
+      "trace_sha256": "fe73058b82ab9ead4d06418d7303d895cb5b810a188a93c43f687820f8d7e4bd",
+      "matrix_events_sha256": "702526df50e815479865ffd732977b6a7a2969e836105ad83862be4b0516990b"
+    }
+  },
+  "checker_sha256": "d44dcb241e827222add50442ac3dea9e3dedd7aa84bc7f177967c3e4d90ddc22",
+  "additional_model_invocations": 0
+}

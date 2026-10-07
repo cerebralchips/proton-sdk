@@ -24,6 +24,7 @@ the contracts contributors must preserve when extending it.
 | Document | Questions it answers |
 | --- | --- |
 | [Implementation walkthrough](implementation.md) | What is implemented? How do model weights, IREE and matrix instructions connect? |
+| [One-token frontend RTL](frontend-rtl.md) | How does imported Torch MLIR run on CVA6, with one token and full output comparison? |
 | [Model frontends](frontends.md) | How does Stories260K reach Torch MLIR through ONNX, and what is qualified on the host? |
 | [DDR deployment](ddr.md) | How are weights placed in external memory and checked on RTL? |
 | [Architecture](architecture.md) | What belongs in each repository? What are the runtime and memory contracts? |

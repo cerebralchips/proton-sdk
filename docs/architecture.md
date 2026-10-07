@@ -31,8 +31,10 @@ New model frontends produce **Torch MLIR** as input to `iree-compile`. ONNX is
 optional at the SDK boundary. The first implemented frontend exports Stories260K
 to ONNX, imports it with `iree-import-onnx`, and qualifies FP32/W8A8 host execution
 with explicit KV inputs/outputs. PyTorch/IREE Turbine can be a later frontend.
-See [frontends](frontends.md) for the measured host-only contract. This path does
-not yet invoke Proton custom dispatches or establish new RTL execution evidence.
+See [frontends](frontends.md) for host qualification and the separate
+[one-token RTL baseline](frontend-rtl.md) for scalar RISC-V compilation and
+bare-metal IREE execution. The imported graph does not yet select Proton matrix
+instructions or DMA.
 
 ## Extension boundaries
 

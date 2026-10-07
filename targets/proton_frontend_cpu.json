@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "target": "proton-frontend-cpu-one-step",
+  "hardware_revision": "ccfaeb67b2fd868f9de8746daee7618a5a1650d7",
+  "triple": "riscv64-unknown-elf",
+  "march": "rv64gcv_zfh_zvfh",
+  "abi": "lp64d",
+  "harts": 1,
+  "ram_base": "0x80000000",
+  "ram_bytes": 16777216,
+  "stack_bytes": 262144,
+  "vector": {
+    "lanes": 2,
+    "vlen_bits": 2048,
+    "elen_bits": 64
+  },
+  "matrix": {
+    "abi_version": 1,
+    "base": "0xe0000000",
+    "ident": "0x000104104d415431",
+    "tile_m": 4,
+    "tile_n": 4,
+    "tile_k": 16,
+    "input_type": "signed_int8",
+    "accumulator_type": "int32_modulo_2^32",
+    "opcode": "0x2b",
+    "zero_funct7": 0,
+    "macc_funct7": 1,
+    "transfer": "cpu_mmio",
+    "completion": "blocking_instruction"
+  },
+  "compiler_features": "+m,+a,+f,+d,+c",
+  "placement": "all-in-sram",
+  "simulator": "upstream/ara/hardware/build-dma-wave/verilator/Vara_tb_verilator",
+  "simulator_configuration": "2_lanes + MATRIX_ENABLE + PROTON_DDR + PROTON_DMA",
+  "qualified_simulator_sha256": "b561c00d3b7223b06e4112817c0f1851c898bd33699871aba5814c551a05e078",
+  "external_memory": {
+    "base": "0x100000000",
+    "bytes": 4294967296,
+    "used": false
+  },
+  "accelerated": false
+}

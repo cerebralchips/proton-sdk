@@ -79,3 +79,25 @@ for mode in ['fp32','w8a8']:
         artifact=frontend['artifacts'][f'stories260k.{mode}.{suffix}']
         assert artifact['bytes']>0 and len(artifact['sha256'])==64
 print('PASS: Stories260K Torch MLIR host frontend evidence and source fingerprints (not RTL)')
+
+retirement=json.loads((root/'verification/frontend-rtl-retirement.json').read_text())
+assert retirement['result']=='PASS' and retirement['additional_model_invocations']==0
+assert hashlib.sha256((root/'tests/frontend_retirement.py').read_bytes()).hexdigest()==retirement['checker_sha256']
+for mode in ['fp32','w8a8']:
+    path=root/'verification'/f'frontend-rtl-{mode}.json'
+    result=json.loads(path.read_text())
+    assert result['result']=='PASS' and result['steps']==1
+    assert result['compared_elements']==20992 and result['token']==403
+    assert 0<result['invoke_cycles']<result['rtl_cycles']
+    assert result['target']==json.loads((root/'targets/proton_frontend_cpu.json').read_text())
+    for name,digest in result['sdk_sha256'].items():
+        assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,name
+    assert result['negative_checks']['result']=='PASS'
+    assert result['negative_checks']['additional_rtl_invocations']==0
+    assert len(result['negative_checks']['rejected'])==7
+    audit=retirement['runs'][mode]
+    assert audit['result_sha256']==hashlib.sha256(path.read_bytes()).hexdigest()
+    assert audit['instructions']['retired']>0
+    assert audit['instructions']['matrix']==audit['instructions']['vector']==0
+    assert audit['ddr_reads']==audit['ddr_writes']==audit['matrix_events']==0
+print('PASS: single-token FP32/W8A8 frontend RTL results, source hashes and retirement audit')

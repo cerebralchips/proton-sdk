@@ -56,3 +56,14 @@ including every logit and KV-cache element, cache boundaries, an exact integer
 quantization probe and deliberate corruption. This record does not promote or
 replace any target G0–G6 or DDR gate. Torch MLIR is the compiler input boundary;
 ONNX is the implemented frontend for this workload.
+
+## Imported frontend RTL gate — one decoder invocation
+
+The [one-token frontend runner](frontend-rtl.md) has separate FP32 and W8A8
+records. Each requires exactly one invocation, one token, 512 logits and both
+10,240-element KV outputs checked on target and independently reconstructed from
+UART. The target also checks memory guards. Positive RTL cycle counts and clean
+completion are mandatory. Negative evidence checks do not rerun the model.
+This scalar CPU baseline does not establish multi-token cache feedback, DMA or
+matrix instruction selection. Historical accelerated G0–G6 results remain
+separate and keep their original source hashes.

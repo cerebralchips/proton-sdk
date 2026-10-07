@@ -1,0 +1,138 @@
+{
+  "result": "PASS",
+  "execution": "CVA6/Ara RTL via Verilator; scalar CPU code generation",
+  "rtl_cycles": 12170347,
+  "invoke_cycles": 4699835,
+  "token": 403,
+  "outputs": {
+    "logits": {
+      "elements": 512,
+      "max_abs_error": 5.245208740234375e-06
+    },
+    "keys": {
+      "elements": 10240,
+      "max_abs_error": 3.814697265625e-06
+    },
+    "values": {
+      "elements": 10240,
+      "max_abs_error": 5.364418029785156e-07
+    }
+  },
+  "compared_elements": 20992,
+  "heap_peak_bytes": 2448640,
+  "simulator_real_seconds": 328.69,
+  "negative_checks": {
+    "result": "PASS",
+    "rejected": [
+      "timeout",
+      "missing_success",
+      "second_token",
+      "missing_cache",
+      "corrupt_logits",
+      "corrupt_keys",
+      "corrupt_values"
+    ],
+    "additional_rtl_invocations": 0
+  },
+  "run_id": "20261007T143514.605344Z",
+  "precision": "fp32",
+  "steps": 1,
+  "expected": {
+    "token": 403,
+    "piece": "Once"
+  },
+  "runtime_source_sha256": "58b2d926dfd5119851dfe90bd62266f3d6cc013ae4be35c1bb350549e57b899a",
+  "wall_seconds": 301.384,
+  "target": {
+    "schema_version": 1,
+    "target": "proton-frontend-cpu-one-step",
+    "hardware_revision": "ccfaeb67b2fd868f9de8746daee7618a5a1650d7",
+    "triple": "riscv64-unknown-elf",
+    "march": "rv64gcv_zfh_zvfh",
+    "abi": "lp64d",
+    "harts": 1,
+    "ram_base": "0x80000000",
+    "ram_bytes": 16777216,
+    "stack_bytes": 262144,
+    "vector": {
+      "lanes": 2,
+      "vlen_bits": 2048,
+      "elen_bits": 64
+    },
+    "matrix": {
+      "abi_version": 1,
+      "base": "0xe0000000",
+      "ident": "0x000104104d415431",
+      "tile_m": 4,
+      "tile_n": 4,
+      "tile_k": 16,
+      "input_type": "signed_int8",
+      "accumulator_type": "int32_modulo_2^32",
+      "opcode": "0x2b",
+      "zero_funct7": 0,
+      "macc_funct7": 1,
+      "transfer": "cpu_mmio",
+      "completion": "blocking_instruction"
+    },
+    "compiler_features": "+m,+a,+f,+d,+c",
+    "placement": "all-in-sram",
+    "simulator": "upstream/ara/hardware/build-dma-wave/verilator/Vara_tb_verilator",
+    "simulator_configuration": "2_lanes + MATRIX_ENABLE + PROTON_DDR + PROTON_DMA",
+    "qualified_simulator_sha256": "b561c00d3b7223b06e4112817c0f1851c898bd33699871aba5814c551a05e078",
+    "external_memory": {
+      "base": "0x100000000",
+      "bytes": 4294967296,
+      "used": false
+    },
+    "accelerated": false
+  },
+  "compiler": "IREE (https://iree.dev):\n  IREE compiler version 3.11.0rc20260316 @ e4a3b0405d7d23554da26403658d0e8c3c5ecf25\n  LLVM version 23.0.0git\n  Optimized build\n",
+  "simulator_sha256": "b561c00d3b7223b06e4112817c0f1851c898bd33699871aba5814c551a05e078",
+  "hardware_evidence_sha256": "d9958e3d86fa478f9ae165797ce5c363758b87e5af38e6cfc592e7ea8a728965",
+  "hardware_sources_sha256": {
+    "hardware/dma/proton_dma.sv": "0775bd8e621039487ccca0dfec04c3aaa5f0cdafcbf199c584f60869bdb469d0",
+    "examples/dma_transfer/init.S": "2f64633f4aeb55aff0aa4eff8df70b0c53f58ea55c11ef5b58e24a7f2f17e35a",
+    "examples/dma_transfer/main.c": "0179bfe431faba180aca7d01559a36e24f5a39685d9fca2713d7d37d54321b18",
+    "tests/dma/dma_tb.sv": "97cbdab9684c7b0eb2a9e5af61ff654a4cfe3f076290e924aa64eb81b2c28339",
+    "patches/ara/0001-remove-invalid-waiver-characters.patch": "3df3618caab9adc59f8da4799784bd88e552d4042b15d9c0438e8a40f02c4aa3",
+    "patches/ara/0002-spike-linker-sections.patch": "70211a0248c2bc0aa9c6c77e50887aafe828b96bfa33129b1c83b2d1338b1bf1",
+    "patches/ara/0003-decimal-cycle-statistics.patch": "11c8ae9e512f7183b33b00fb285c8bd08a02ed47ac32258146f2c504fba9bb09",
+    "patches/ara/0004-track-testbench-build-inputs.patch": "17442599ba6a4a00d544354774f63f93ff32b0508ad616371a5e0dc46c03e2aa",
+    "patches/ara/0005-matrix-integration.patch": "e6570acc91f3520c5beb631d8040c484be18ef02b9e450bfffc6ba3db69eca54",
+    "patches/ara/0006-functional-ddr.patch": "b4cf15c04be36f49004ebd22097d6214d161a05beec90da1a4905ad4fe6eddf6",
+    "patches/ara/0007-programmable-dma.patch": "5b39f5946edf721ddbf8bed4acfeec85d24889f571a81698367c40dfaea7d416",
+    "patches/cva6/0001-matrix-serialization.patch": "63e44196b35bf85790fdb022b20407bad191709741d8ef5c17aab1eb0944e5be",
+    "scripts/lab/dma.py": "3bc050fa67564f035354318ba9705cfe31265b17b407d46b1d26bd71b01595b2",
+    "scripts/lab/dma-wave.py": "049596b7ad987f4b6e3b69d4bbff981aa52970eb3565fb77c58d47f92d842adf"
+  },
+  "artifacts": {
+    "disassembly.log": "d85eac5f1042cfe72bb8ca9f3c919cb1ffbc0576cafaea19faf7399c3429d51e",
+    "program.elf": "de0feffd2539d719d5626e5c6aeff39b34b9d776de6a6d32f463d491f1e6611d",
+    "rtl.log": "f2a57547893585a423c640842f3fc9e156b21923e7d02f291c1793f128aa9564",
+    "reference.npz": "53f522174128ca4535767590e226a0dfaa84fbe7613fa2d7b0f41218f2933bba",
+    "compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "module.vmfb": "066cdcd84e7e941d3523a654d0f5c7d62253b930ec2682884dd4c832cdc01654",
+    "model.torch.mlir": "8dbb27e7cc49b3ab83f98e551173f1ce1caadbd1b4e892638a9ccd7ba1f6c2d5",
+    "model.onnx": "1215ea8f6e71d56c8619cb34f6680485d9a0145863d57f5e0a0d3a13669ef46a",
+    "dispatch.o": "e860bb26eac39da4c8898b4501fbc99a06230c132874ff6d88c51f0dc0aef3aa",
+    "import.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sdk_sha256": {
+    "runtime/frontend_runner.c": "f599a8e315419281b1385d7d8c83068ad5756a21686641a5b34f8e3072fd75fc",
+    "cmake/frontend/CMakeLists.txt": "7b7e9de3d4adda7057fb64eec9f904713550d6b186a118437d73ddc02448582e",
+    "scripts/frontend-rtl": "78be4b3a14e513a11304ea49f725595d4b48de61278c2a639c744ca7044fa84f",
+    "scripts/frontend_rtl.py": "2b984489d502ee3edf049c6f4ab2381024affaec62ab8619379e36e4a02b67c2",
+    "tests/frontend_rtl_evidence.py": "746c3c69b84b4b25b8e80e941686ca50ca770ec285af7716373e7a584affcb30",
+    "targets/proton_frontend_cpu.json": "ab7bc4961511ba1d510a115d1d0130f4d598dc5a4db2759e94effd618258662c",
+    "patches/iree/0001-align-dispatch-bindings.patch": "00b6893e2f3d21ecc470230545fdadd713d7450f70e6f6daf5f1f06b7ba12bb9",
+    "models/stories.py": "9e0a36ec75ceaffca1d61f205d5e7892691d4a8218e59a3f7f0ebb5e40d06aee",
+    "models/stories260k/export_onnx.py": "a3baa0a7a88ae87105d7f9f3030bba65fcd913dbb9f4343055db16a2227a6546",
+    "cmake/proton.cmake": "9ca75a6f4f52a93a5ec1425218bf8c869b2ccd75ea10a18553e6e699c2b53a7d",
+    "runtime/iree_config.h": "a5df7fcf73df7d743ce3ecbd37bc16cdd84c1c416dd8531fa5d90e4da43705fd",
+    "runtime/proton/start.S": "e88549303464a0a30be91acb7238ee603563e60e2630cad6e73a5ae16c932598",
+    "runtime/proton/platform.c": "97b1df2e05ad956f992f15abdb20d27502d02628ce6d855b45f94d3b3930641c",
+    "runtime/proton/link.ld": "89afbcf199a7c208da8203ae509c4577452d914742fa4e5ea0b5a0d2c2eac45c",
+    "runtime/proton/console.c": "e871b4bcd690153c01d25389050919b9e2227b13193d11d023370b1f1040721a",
+    "CMakeLists.txt": "dc68405175229abde73fe38e91014e8db47778b8e479e34fb3975647390753d1"
+  }
+}

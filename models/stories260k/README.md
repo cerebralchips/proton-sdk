@@ -37,5 +37,7 @@ Batch size is one and the exported cache capacity is 64. Restricting the cache
 capacity does not remove layers or truncate the vocabulary.
 
 The checkpoint metadata declares MIT; see [third-party sources](../../THIRD_PARTY.md).
-This frontend has **host numerical qualification only**. It does not yet select
-Proton matrix instructions, DMA, SRAM/DDR placement, or a bare-metal RTL runner.
+Host qualification is described above. The separate
+[one-token RTL runner](../../docs/frontend-rtl.md) compiles this frontend to scalar
+RISC-V and validates one invocation per precision on CVA6. Automatic Proton
+matrix instructions, DMA and SRAM/DDR placement remain future work.

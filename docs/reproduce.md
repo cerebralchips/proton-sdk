@@ -73,3 +73,11 @@ In the provisioned lab, run `./scripts/sdk onnx-bootstrap` followed by
 `./scripts/sdk onnx-validate`. This uses an isolated host environment and does
 not run Verilator. See the [frontend guide](frontends.md) for generated ONNX,
 Torch MLIR and VMFB files, full-output checks and measured limitations.
+
+## Imported Torch MLIR on RTL — one token only
+
+After frontend bootstrap, run `/usr/bin/time -p ./scripts/frontend-rtl` for
+one FP32 token and one W8A8 token, serially. Use `fp32` or `w8a8` as an argument
+to select just one precision. The [runner guide](frontend-rtl.md) describes the
+separate target pin, runtime alignment patch and full logits/cache comparison.
+No 16-token workload is launched by this command.

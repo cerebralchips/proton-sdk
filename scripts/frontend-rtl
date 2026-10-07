@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""Stage and run one imported Stories260K decoder step per requested precision."""
+import fcntl
+import json
+import os
+from pathlib import Path
+import shlex
+import shutil
+import subprocess
+import sys
+
+root=Path(__file__).resolve().parents[1]
+if '--help' in sys.argv or '-h' in sys.argv:
+    print('Usage: scripts/frontend-rtl [both|fp32|w8a8]\nExactly one token per precision; default both. See docs/frontend-rtl.md.')
+    sys.exit(0)
+if len(sys.argv)>2 or (len(sys.argv)==2 and sys.argv[1] not in {'both','fp32','w8a8'}):
+    sys.exit('Expected both, fp32 or w8a8')
+config=json.loads((root/'.local.json').read_text()) if (root/'.local.json').exists() else {}
+hw=Path(os.environ.get('PROTON_HW_ROOT',config.get('hardware_root','../Hardware/ara-lab')))
+if not hw.is_absolute(): hw=(root/hw).resolve()
+if not (hw/'scripts/ara').exists(): sys.exit('Set PROTON_HW_ROOT to the provisioned hardware lab')
+work=hw/'artifacts/sdk-workspace'
+work.mkdir(parents=True,exist_ok=True)
+with (work/'sdk-host.lock').open('a') as lock:
+    try: fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+    except BlockingIOError: sys.exit('Another SDK command is active')
+    stage=work/'src'
+    stage.mkdir(exist_ok=True)
+    for source in root.iterdir():
+        if source.name.startswith('.') or source.name in {'artifacts','build','third_party'}: continue
+        dest=stage/source.name
+        if source.is_dir():
+            shutil.copytree(source,dest,dirs_exist_ok=True,ignore=shutil.ignore_patterns('__pycache__','cache'))
+            for old in sorted(dest.rglob('*'),reverse=True):
+                if old.is_file() and not (source/old.relative_to(dest)).exists(): old.unlink()
+        else: shutil.copy2(source,dest)
+    command=('source /ara-workspace/scripts/lab/env.sh; '
+             'exec 9>"$LAB_TOOLS/run.lock"; flock -n 9 || exit 75; '
+             'cd /ara-workspace/artifacts/sdk-workspace; '
+             'exec onnx-venv/bin/python src/scripts/frontend_rtl.py '+shlex.join(sys.argv[1:]))
+    status=subprocess.call([str(hw/'scripts/ara'),'shell','bash','-lc',command])
+    if status==0:
+        for source in (stage/'verification').glob('frontend-rtl-*.json'):
+            shutil.copy2(source,root/'verification'/source.name)
+    sys.exit(status)

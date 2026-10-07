@@ -168,10 +168,11 @@ not inference benchmarks, Verilator estimates or hardware cycle measurements.
 
 ## Limits and retained bring-up evidence
 
-This milestone qualifies the frontend and host arithmetic. It does not qualify
-this imported graph on RTL, provide automatic Proton matrix instruction selection,
-or integrate DMA, double buffering or SRAM/DDR placement. Historical RTL results
-in the SDK belong to the existing custom-dispatch flow.
+The measurements on this page qualify the frontend and host arithmetic. The
+separate [one-token RTL baseline](frontend-rtl.md) checks scalar RISC-V execution
+of the imported graph. Automatic Proton matrix instruction selection, DMA,
+double buffering and SRAM/DDR placement remain future work. The historical
+16-token RTL results belong to the existing custom-dispatch flow.
 
 The first host attempt imported and compiled successfully but invoked `main`;
 the importer exports the ONNX graph name. That failure is retained locally under

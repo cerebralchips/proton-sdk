@@ -37,7 +37,9 @@ generation from BOS, W8A8 linear operations and FP32 cache/nonlinear operations.
 Attention scores/softmax/value aggregation remain scalar. The graph is explicitly
 generated for this model; arbitrary framework-model import is a later milestone. A separate
 [Stories260K frontend](docs/frontends.md) now qualifies ONNX → Torch MLIR →
-IREE execution on the host CPU; it is not yet connected to this RTL deployment.
+IREE execution on the host CPU. Its separate
+[one-token RTL runner](docs/frontend-rtl.md) provides a compiler-generated scalar
+baseline alongside the original accelerated deployment.
 Compiler-generated RVV is disabled after a verifier stall was observed and
 retained in the [bring-up notes](docs/bringup-notes.md).
 
@@ -82,7 +84,15 @@ an independent reference, with deliberate corruption rejected.
 See the [model entry](models/stories260k/README.md),
 [frontend guide and measured results](docs/frontends.md), and
 [host verification record](verification/onnx-stories260k.json).
-Matrix code generation and RTL execution of this imported graph are later gates.
+The [one-token RTL baseline](docs/frontend-rtl.md) runs the imported graph on
+CVA6 through bare-metal IREE, with full logits and KV-cache comparison:
+
+```sh
+/usr/bin/time -p ./scripts/frontend-rtl  # one token per FP32/W8A8 variant
+```
+
+Matrix code generation, DMA and DDR placement for this imported graph remain
+later gates. The new runner has no multi-token generation option.
 
 ## Documentation
 

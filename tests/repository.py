@@ -52,3 +52,30 @@ assert full['model']['steps']==16 and full['matrix_counts']==[14048,65152]
 assert ddr['scalar_matrix_comparison']=='PASS bit-identical first-step logits'
 assert json.loads((root/'verification/ddr-negative.json').read_text())['result']=='PASS'
 print('PASS: DDR deployment, memory traffic, source hashes and scalar/matrix comparison')
+
+# Host frontend evidence is independent of the historical RTL/DDR gates.
+frontend=json.loads((root/'verification/onnx-stories260k.json').read_text())
+assert frontend['result']=='PASS'
+assert frontend['execution'].endswith('not RTL')
+for name, expected in frontend['sdk_sha256'].items():
+    assert hashlib.sha256((root/name).read_bytes()).hexdigest()==expected, name
+assert set(frontend['runs'])=={'fp32','w8a8'}
+compared=0
+for mode, backends in frontend['runs'].items():
+    assert set(backends)=={'onnxruntime','iree'}
+    for backend, result in backends.items():
+        assert result['result']=='PASS' and result['steps']==16
+        assert len(result['tokens'])==16 and len(result['cases'])==20
+        for case in result['cases']:
+            for name, elements in [('logits',512),('keys',10240),('values',10240)]:
+                assert case[name]['elements']==elements
+                compared+=elements
+assert compared==1679360
+assert frontend['quantization_probe']['result']=='PASS'
+assert frontend['quantization_probe']['comparison']=='exact equality'
+assert frontend['process_failure_checks']=={'result':'PASS','rejected_outputs':['logits','keys','values']}
+for mode in ['fp32','w8a8']:
+    for suffix in ['onnx','torch.mlir','vmfb']:
+        artifact=frontend['artifacts'][f'stories260k.{mode}.{suffix}']
+        assert artifact['bytes']>0 and len(artifact['sha256'])==64
+print('PASS: Stories260K Torch MLIR host frontend evidence and source fingerprints (not RTL)')

@@ -46,3 +46,13 @@ runtime weight placement checks, nonzero external reads, full-model reference
 comparison, and scalar/matrix agreement. It retains the same numerical envelope
 and architectural trace requirements. A DDR model pass covers the exercised
 weights and program; it does not qualify every external address or larger models.
+
+## Torch MLIR frontend host gate
+
+The [Stories260K frontend](frontends.md) has a separate
+[host qualification record](../verification/onnx-stories260k.json). FP32 and W8A8
+ONNX Runtime/IREE results are compared against the independent NumPy decoder,
+including every logit and KV-cache element, cache boundaries, an exact integer
+quantization probe and deliberate corruption. This record does not promote or
+replace any target G0–G6 or DDR gate. Torch MLIR is the compiler input boundary;
+ONNX is the implemented frontend for this workload.

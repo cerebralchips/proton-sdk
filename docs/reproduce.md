@@ -66,3 +66,10 @@ reserved stack space. The application checks heap exhaustion and a stack canary.
 This procedure currently reuses the provisioned hardware lab toolchain and RTL
 simulator. A fresh machine must first provision and verify proton-npu. SDK source
 bootstrap and cross-build are separate from provisioning the hardware tools.
+
+## Stories260K Torch MLIR frontend (host only)
+
+In the provisioned lab, run `./scripts/sdk onnx-bootstrap` followed by
+`./scripts/sdk onnx-validate`. This uses an isolated host environment and does
+not run Verilator. See the [frontend guide](frontends.md) for generated ONNX,
+Torch MLIR and VMFB files, full-output checks and measured limitations.

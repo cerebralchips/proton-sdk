@@ -1,0 +1,1456 @@
+{
+  "result": "PASS",
+  "tolerance": {
+    "atol": 0.0001,
+    "rtol": 1e-05
+  },
+  "runs": {
+    "fp32": {
+      "onnxruntime": {
+        "result": "PASS",
+        "steps": 16,
+        "tokens": [
+          403,
+          407,
+          261,
+          378,
+          432,
+          383,
+          286,
+          261,
+          376,
+          298,
+          315,
+          421,
+          395,
+          317,
+          426,
+          338
+        ],
+        "text": "Once upon a time, there was a little girl named Lily. She",
+        "cases": [
+          {
+            "case": "generation-0",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 2.86102294921875e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 4.76837158203125e-07
+            }
+          },
+          {
+            "case": "generation-1",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 5.602836608886719e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 4.76837158203125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 7.450580596923828e-07
+            }
+          },
+          {
+            "case": "generation-2",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 6.67572021484375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 7.748603820800781e-07
+            }
+          },
+          {
+            "case": "generation-3",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 1.049041748046875e-05
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 7.748603820800781e-07
+            }
+          },
+          {
+            "case": "generation-4",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 8.344650268554688e-07
+            }
+          },
+          {
+            "case": "generation-5",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 6.198883056640625e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 8.493661880493164e-07
+            }
+          },
+          {
+            "case": "generation-6",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 9.834766387939453e-07
+            }
+          },
+          {
+            "case": "generation-7",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 9.834766387939453e-07
+            }
+          },
+          {
+            "case": "generation-8",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 1.049041748046875e-05
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 9.834766387939453e-07
+            }
+          },
+          {
+            "case": "generation-9",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 9.834766387939453e-07
+            }
+          },
+          {
+            "case": "generation-10",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 8.58306884765625e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 1.1324882507324219e-06
+            }
+          },
+          {
+            "case": "generation-11",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 1.1324882507324219e-06
+            }
+          },
+          {
+            "case": "generation-12",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 9.059906005859375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 1.1324882507324219e-06
+            }
+          },
+          {
+            "case": "generation-13",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 7.867813110351562e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 1.1324882507324219e-06
+            }
+          },
+          {
+            "case": "generation-14",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 6.67572021484375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 1.1324882507324219e-06
+            }
+          },
+          {
+            "case": "generation-15",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 7.748603820800781e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 1.1324882507324219e-06
+            }
+          },
+          {
+            "case": "boundary-0",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 5.140900611877441e-07
+            }
+          },
+          {
+            "case": "boundary-1",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 4.76837158203125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 5.364418029785156e-07
+            }
+          },
+          {
+            "case": "boundary-31",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 7.152557373046875e-07
+            }
+          },
+          {
+            "case": "boundary-63",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 5.245208740234375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 2.86102294921875e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 7.152557373046875e-07
+            }
+          }
+        ],
+        "execution_seconds": 0.024004
+      },
+      "iree": {
+        "result": "PASS",
+        "steps": 16,
+        "tokens": [
+          403,
+          407,
+          261,
+          378,
+          432,
+          383,
+          286,
+          261,
+          376,
+          298,
+          315,
+          421,
+          395,
+          317,
+          426,
+          338
+        ],
+        "text": "Once upon a time, there was a little girl named Lily. She",
+        "cases": [
+          {
+            "case": "generation-0",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 2.86102294921875e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 5.364418029785156e-07
+            }
+          },
+          {
+            "case": "generation-1",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 5.4836273193359375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 8.642673492431641e-07
+            }
+          },
+          {
+            "case": "generation-2",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 6.4373016357421875e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 8.717179298400879e-07
+            }
+          },
+          {
+            "case": "generation-3",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 7.152557373046875e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 8.717179298400879e-07
+            }
+          },
+          {
+            "case": "generation-4",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 8.58306884765625e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 9.238719940185547e-07
+            }
+          },
+          {
+            "case": "generation-5",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 1.1324882507324219e-06
+            }
+          },
+          {
+            "case": "generation-6",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 9.059906005859375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 1.1324882507324219e-06
+            }
+          },
+          {
+            "case": "generation-7",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 6.377696990966797e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 1.1324882507324219e-06
+            }
+          },
+          {
+            "case": "generation-8",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 6.973743438720703e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 1.1324882507324219e-06
+            }
+          },
+          {
+            "case": "generation-9",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 8.58306884765625e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 1.1324882507324219e-06
+            }
+          },
+          {
+            "case": "generation-10",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 7.0035457611083984e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 1.1324882507324219e-06
+            }
+          },
+          {
+            "case": "generation-11",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.682209014892578e-06
+            }
+          },
+          {
+            "case": "generation-12",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 8.58306884765625e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.682209014892578e-06
+            }
+          },
+          {
+            "case": "generation-13",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 7.3909759521484375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.682209014892578e-06
+            }
+          },
+          {
+            "case": "generation-14",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 6.4373016357421875e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.682209014892578e-06
+            }
+          },
+          {
+            "case": "generation-15",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 9.059906005859375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.682209014892578e-06
+            }
+          },
+          {
+            "case": "boundary-0",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 7.152557373046875e-07
+            }
+          },
+          {
+            "case": "boundary-1",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 5.513429641723633e-07
+            }
+          },
+          {
+            "case": "boundary-31",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 8.58306884765625e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 9.5367431640625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 7.152557373046875e-07
+            }
+          },
+          {
+            "case": "boundary-63",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 4.76837158203125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 5.960464477539062e-07
+            }
+          }
+        ],
+        "execution_seconds": 0.010532
+      }
+    },
+    "w8a8": {
+      "onnxruntime": {
+        "result": "PASS",
+        "steps": 16,
+        "tokens": [
+          403,
+          407,
+          261,
+          378,
+          432,
+          383,
+          286,
+          261,
+          376,
+          298,
+          315,
+          421,
+          395,
+          317,
+          426,
+          338
+        ],
+        "text": "Once upon a time, there was a little girl named Lily. She",
+        "cases": [
+          {
+            "case": "generation-0",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 0.0
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 0.0
+            }
+          },
+          {
+            "case": "generation-1",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          },
+          {
+            "case": "generation-2",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 9.5367431640625e-07
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-3",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-4",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 2.86102294921875e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-5",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 1.9073486328125e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-6",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-7",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 1.9073486328125e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-8",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-9",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-10",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-11",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 2.86102294921875e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-12",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-13",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 2.86102294921875e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 4.76837158203125e-07
+            }
+          },
+          {
+            "case": "generation-14",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 4.76837158203125e-07
+            }
+          },
+          {
+            "case": "generation-15",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 5.7220458984375e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 4.76837158203125e-07
+            }
+          },
+          {
+            "case": "boundary-0",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 0.0
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 0.0
+            }
+          },
+          {
+            "case": "boundary-1",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          },
+          {
+            "case": "boundary-31",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 1.9073486328125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          },
+          {
+            "case": "boundary-63",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 0.0
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 0.0
+            }
+          }
+        ],
+        "execution_seconds": 0.021143
+      },
+      "iree": {
+        "result": "PASS",
+        "steps": 16,
+        "tokens": [
+          403,
+          407,
+          261,
+          378,
+          432,
+          383,
+          286,
+          261,
+          376,
+          298,
+          315,
+          421,
+          395,
+          317,
+          426,
+          338
+        ],
+        "text": "Once upon a time, there was a little girl named Lily. She",
+        "cases": [
+          {
+            "case": "generation-0",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          },
+          {
+            "case": "generation-1",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          },
+          {
+            "case": "generation-2",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 1.9073486328125e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-3",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-4",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-5",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-6",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-7",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-8",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-9",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 1.9073486328125e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-10",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 6.67572021484375e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-11",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-12",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 1.9073486328125e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 3.5762786865234375e-07
+            }
+          },
+          {
+            "case": "generation-13",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 2.86102294921875e-06
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 5.960464477539062e-07
+            }
+          },
+          {
+            "case": "generation-14",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 5.960464477539062e-07
+            }
+          },
+          {
+            "case": "generation-15",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 7.62939453125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 5.960464477539062e-07
+            }
+          },
+          {
+            "case": "boundary-0",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          },
+          {
+            "case": "boundary-1",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          },
+          {
+            "case": "boundary-31",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 3.814697265625e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          },
+          {
+            "case": "boundary-63",
+            "logits": {
+              "elements": 512,
+              "max_abs_error": 0.0
+            },
+            "keys": {
+              "elements": 10240,
+              "max_abs_error": 1.9073486328125e-06
+            },
+            "values": {
+              "elements": 10240,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          }
+        ],
+        "execution_seconds": 0.017168
+      }
+    }
+  },
+  "quantization_error": {
+    "teacher_forced_steps": 16,
+    "max_abs_logit_error": 0.47902917861938477,
+    "rms_logit_error": 0.14223486185073853,
+    "top1_agreement": 1.0
+  },
+  "negative_checks": [
+    "logits corruption rejected",
+    "keys corruption rejected",
+    "values corruption rejected",
+    "invalid token=-1,position=0 rejected",
+    "invalid token=512,position=0 rejected",
+    "invalid token=1,position=-1 rejected",
+    "invalid token=1,position=64 rejected"
+  ],
+  "quantization_probe": {
+    "result": "PASS",
+    "backends": [
+      "onnxruntime",
+      "iree"
+    ],
+    "activation_elements": 516,
+    "accumulator_elements": 15,
+    "reduction_size": 172,
+    "coverage": [
+      "zero scale guard",
+      "positive/negative half ties",
+      "neighboring FP32 values",
+      "signed INT8 extrema",
+      "INT32 accumulation",
+      "matrix tile tails"
+    ],
+    "comparison": "exact equality"
+  },
+  "process_failure_checks": {
+    "result": "PASS",
+    "rejected_outputs": [
+      "logits",
+      "keys",
+      "values"
+    ]
+  },
+  "run_id": "20261007T070201.470520Z",
+  "pipeline": "checkpoint -> ONNX -> iree-import-onnx -> Torch MLIR -> iree-compile -> host IREE",
+  "frontend_contract": "Torch MLIR is the compiler input; ONNX is this model frontend, not an SDK-wide requirement",
+  "execution": "host CPU: NumPy, ONNX Runtime CPUExecutionProvider, IREE local-sync; not RTL",
+  "compiler": "IREE (https://iree.dev):\n  IREE compiler version 3.11.0rc20260316 @ e4a3b0405d7d23554da26403658d0e8c3c5ecf25\n  LLVM version 23.0.0git\n  Optimized build\n",
+  "packages": {
+    "coloredlogs": "15.0.1",
+    "flatbuffers": "25.12.19",
+    "humanfriendly": "10.0",
+    "iree-base-compiler": "3.11.0",
+    "iree-base-runtime": "3.11.0",
+    "ml-dtypes": "0.6.0",
+    "mpmath": "1.3.0",
+    "numpy": "2.4.3",
+    "onnx": "1.19.1",
+    "onnxruntime": "1.23.2",
+    "packaging": "26.3",
+    "pip": "24.0",
+    "protobuf": "7.36.2",
+    "sympy": "1.14.0",
+    "typing-extensions": "4.16.0"
+  },
+  "timing_seconds": {
+    "export": 0.271,
+    "fp32_import": 0.323,
+    "fp32_compile": 1.291,
+    "w8a8_import": 0.322,
+    "w8a8_compile": 1.808,
+    "quantization_probe_import": 0.27,
+    "quantization_probe_compile": 0.417,
+    "host_validate": 0.485
+  },
+  "checkpoint": {
+    "repository": "karpathy/tinyllamas",
+    "revision": "0bd21da7698eaf29a0d7de3992de8a46ef624add",
+    "directory": "stories260K",
+    "license_metadata": "mit"
+  },
+  "checkpoint_files": {
+    "stories260K.bin": "b0a507e7ad0f626624f17112325e66691f9076d622e1d3274d103d00299f2696",
+    "tok512.bin": "037cb335abb25d1fa9e8ecae30ed2a3a8ace9302862ebcdc05d51a6bbb10c312",
+    "readme.md": "b743d79e10d9fdd57686aaef8fbb8ac337672dc0e098f9aebe672e4faea06ba4"
+  },
+  "artifacts": {
+    "quantization_probe.vmfb": {
+      "sha256": "5da07d111b4714289995fa4145a5187a986981a757d7251469a8ace8683091a0",
+      "bytes": 15389
+    },
+    "outputs.npz": {
+      "sha256": "bc79317183f9e05e62d0f2d9cdc341b94005efd87a8dfe6ad0adeb26ca03af40",
+      "bytes": 14038042
+    },
+    "quantization_probe.torch.mlir": {
+      "sha256": "1676d6b9ff07b1c63f313c156527e0be5da819e518b8e5e6bdcd17d007a4d5fa",
+      "bytes": 6169
+    },
+    "stories260k.w8a8.vmfb": {
+      "sha256": "b574dc4b12048a514bdcf48eef70d994d9708c3a3a3a135e2d69c696ada8c9ef",
+      "bytes": 514343
+    },
+    "stories260k.fp32.vmfb": {
+      "sha256": "f837785d21b3a867ebc2f1276f665fa95b32ae5fdbee02432f45243850ceb5cd",
+      "bytes": 1244111
+    },
+    "stories260k.w8a8.torch.mlir": {
+      "sha256": "6dc00b0c7085ddd6cff0f88882dd2d221f148f75bf3adce9056e37a5a1842937",
+      "bytes": 1030349
+    },
+    "quantization_probe.onnx": {
+      "sha256": "5e3e1ad0dda799cd84100285a659cdfd287537a6a96281f1f207ed3d93a0c410",
+      "bytes": 2270
+    },
+    "stories260k.fp32.torch.mlir": {
+      "sha256": "8dbb27e7cc49b3ab83f98e551173f1ce1caadbd1b4e892638a9ccd7ba1f6c2d5",
+      "bytes": 2444988
+    },
+    "stories260k.fp32.onnx": {
+      "sha256": "1215ea8f6e71d56c8619cb34f6680485d9a0145863d57f5e0a0d3a13669ef46a",
+      "bytes": 1204437
+    },
+    "stories260k.w8a8.onnx": {
+      "sha256": "fa001696e6acb787ad2456e48e1fea8218c6ca13615a676f73e5e712097ca979",
+      "bytes": 481108
+    }
+  },
+  "host": {
+    "machine": "aarch64",
+    "system": "Linux"
+  },
+  "sdk_sha256": {
+    "models/stories.py": "9e0a36ec75ceaffca1d61f205d5e7892691d4a8218e59a3f7f0ebb5e40d06aee",
+    "models/stories260k/export_onnx.py": "a3baa0a7a88ae87105d7f9f3030bba65fcd913dbb9f4343055db16a2227a6546",
+    "models/stories260k/onnx.lock.json": "07b42789ae5b4aa5f748da9487ff764937f3593556d085ed6a9fd107d88f192e",
+    "scripts/onnx.py": "ee2cbe59523160cf13abd9415f77386f706fb1ea33082f4a2130db6f3b33a8f5",
+    "scripts/sdk": "8cf7ee1f60bbae7ae11ccd6076f6d26635e48783d815dca7c11ac45290c211ad",
+    "tests/onnx_host.py": "664f27ce276fba0e67b3872dfc8b9da971b6c6eed294f743db2bbc76d72381c1"
+  }
+}

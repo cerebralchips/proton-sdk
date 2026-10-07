@@ -21,3 +21,15 @@ The runtime embedding follows IREE's static-library and custom-dispatch examples
 Decoder equations and checkpoint/tokenizer layouts follow llama2.c; the NumPy
 reference, packing, Proton kernels, deployment and evidence tooling are local
 implementations. The native upstream reference is built unchanged for comparison.
+
+The optional Stories260K ONNX host frontend additionally uses:
+
+- ONNX: Apache-2.0; https://github.com/onnx/onnx.
+- ONNX Runtime: MIT; https://github.com/microsoft/onnxruntime.
+- torch-mlir ONNX importer components bundled with IREE: Apache-2.0 with LLVM
+  exceptions; https://github.com/llvm/torch-mlir.
+- NumPy: BSD-3-Clause; https://github.com/numpy/numpy.
+
+The isolated environment pins direct and transitive packages in
+[onnx.lock.json](models/stories260k/onnx.lock.json). Installed distributions retain
+their upstream notices; generated model binaries are not redistributed in Git.

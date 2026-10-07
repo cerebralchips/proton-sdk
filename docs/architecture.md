@@ -25,6 +25,15 @@ uses explicit custom CPU dispatches, not a new MLIR dialect or a claim of automa
 mapping of arbitrary models. General graph import and pattern-based rewrites can
 grow independently of the target kernel contract.
 
+## Frontend compiler boundary
+
+New model frontends produce **Torch MLIR** as input to `iree-compile`. ONNX is
+optional at the SDK boundary. The first implemented frontend exports Stories260K
+to ONNX, imports it with `iree-import-onnx`, and qualifies FP32/W8A8 host execution
+with explicit KV inputs/outputs. PyTorch/IREE Turbine can be a later frontend.
+See [frontends](frontends.md) for the measured host-only contract. This path does
+not yet invoke Proton custom dispatches or establish new RTL execution evidence.
+
 ## Extension boundaries
 
 - `targets/`: hardware capabilities, memory, ISA and compatibility pins.

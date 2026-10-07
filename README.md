@@ -35,7 +35,9 @@ deployment tests live here.
 This is a qualified tiny-model deployment: batch one, context bound 64, greedy
 generation from BOS, W8A8 linear operations and FP32 cache/nonlinear operations.
 Attention scores/softmax/value aggregation remain scalar. The graph is explicitly
-generated for this model; arbitrary framework-model import is a later milestone.
+generated for this model; arbitrary framework-model import is a later milestone. A separate
+[Stories260K frontend](docs/frontends.md) now qualifies ONNX → Torch MLIR →
+IREE execution on the host CPU; it is not yet connected to this RTL deployment.
 Compiler-generated RVV is disabled after a verifier stall was observed and
 retained in the [bring-up notes](docs/bringup-notes.md).
 
@@ -62,6 +64,25 @@ also passes. The full DDR run took 91,466,323 RTL cycles.
 
 See the guide for hardware provisioning, revision pinning and generated-model
 prerequisites. The measurements in the first table describe the original SRAM profile.
+
+## Torch MLIR frontend
+
+The compiler input boundary is **Torch MLIR**; ONNX is one supported source
+format, and future PyTorch/IREE Turbine frontends can use the same boundary.
+The first qualified frontend exports the pretrained Stories260K model as FP32
+and W8A8 ONNX, imports it with `iree-import-onnx`, then runs the compiled result
+on the host CPU. All 80 cases pass full logits and KV-cache comparison against
+an independent reference, with deliberate corruption rejected.
+
+```sh
+./scripts/sdk onnx-bootstrap
+./scripts/sdk onnx-validate
+```
+
+See the [model entry](models/stories260k/README.md),
+[frontend guide and measured results](docs/frontends.md), and
+[host verification record](verification/onnx-stories260k.json).
+Matrix code generation and RTL execution of this imported graph are later gates.
 
 ## Documentation
 

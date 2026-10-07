@@ -66,3 +66,12 @@ All emitted logits must match the independent reference. Local SRAM baseline
 logits, when present, are also compared bit for bit. This deployment reads about
 255 KiB of distinct DDR weights; it does not establish a full-capacity sweep or
 a model larger than SRAM.
+
+## Stories260K frontend — host only
+
+[onnx-stories260k.json](onnx-stories260k.json) records FP32 and W8A8 export through
+ONNX → Torch MLIR → IREE, 80 full-output host cases, exact quantization checks,
+negative gates, source/model/artifact hashes and stage durations. It establishes
+no new RTL or matrix-acceleration result. Reproduce with
+`./scripts/sdk onnx-bootstrap` and `./scripts/sdk onnx-validate`; see the
+[frontend guide](../docs/frontends.md).

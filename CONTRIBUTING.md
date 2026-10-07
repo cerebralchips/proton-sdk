@@ -4,8 +4,9 @@ Start with the [documentation index](docs/README.md),
 [implementation walkthrough](docs/implementation.md),
 [architecture](docs/architecture.md) and [verification gates](docs/verification.md).
 The current qualified deployment is Stories260K on the pinned Proton v1 RTL.
-General PyTorch/ONNX import, other model families and future hardware revisions
-are extension work, not existing compatibility guarantees.
+The [Stories260K frontend](docs/frontends.md) additionally qualifies ONNX →
+Torch MLIR → IREE on the host CPU. General model import, other model families
+and future hardware revisions remain extension work.
 
 ## Set up a checkout
 
